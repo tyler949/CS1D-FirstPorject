@@ -1,5 +1,3 @@
-#include <vector>
-
 #ifndef WINERIE_H_
 #define WINERIE_H_
 
