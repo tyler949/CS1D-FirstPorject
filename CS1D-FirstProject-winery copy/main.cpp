@@ -1,12 +1,11 @@
+#include "mainwindow.h"
+#include <QApplication>
 
-
-#include "main.h"
-
-int main()
+int main(int argc, char *argv[])
 {
-    vector<WineryClass> firstVec(30);
-    
-    PropagateVector(firstVec);
-    
-    return 0;
+    QApplication a(argc, argv);
+    MainWindow w;
+    w.show();
+
+    return a.exec();
 }
