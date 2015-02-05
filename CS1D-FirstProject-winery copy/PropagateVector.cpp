@@ -3,14 +3,11 @@
 #include "main.h"
 #include "wineType.h"
 
-void PropagateVector(vector<WineryClass>& passedFirstVec)
+void PropagateVector(vector<WineryClass*>& passedFirstVec)
 {
-    WineryClass* tempPtr;
     wineType* wineTypesHead = NULL;
     wineType* wineTypesTail = NULL;
     wineType* wineTypesTemp = NULL;
-
-    int i = 0;
     
     string wineryName;
     int wineryNumber;
@@ -101,8 +98,9 @@ void PropagateVector(vector<WineryClass>& passedFirstVec)
         
         
         
-//~~~~~~~~~~~~~~dont know if this is the route i want to go~~~~~~~~~~~~~~~~~
-//makes a list of the wines offered and passes the list to the constructor
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        //makes a list of the wines offered and passes the list to the
+        //constructor
         
         for (int j = 1; j <= winesOffered; j++)
         {
@@ -129,17 +127,16 @@ void PropagateVector(vector<WineryClass>& passedFirstVec)
             }
         }
         
-//~~~~~~~~~~~~~~dont know if this is the route i want to go~~~~~~~~~~~~~~~~~
-       
-        tempPtr = new WineryClass(wineryName, wineryNumber, numberOfWinerys,
-                                  distance1, distance2, distance3, distance4,
-                                  distance5, distance6, distance7, distance8,
-                                  distance9, distance10, milesToVilla,
-                                  winesOffered, wineTypesHead);
-//does next line work?????????????????????????????????????????????????????
-        passedFirstVec.at(i) = *tempPtr;//
-        i++;
-        tempPtr = NULL;
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        
+        passedFirstVec.push_back(new WineryClass(wineryName, wineryNumber,
+                                                 numberOfWinerys, distance1,
+                                                 distance2, distance3, distance4,
+                                                 distance5, distance6, distance7,
+                                                 distance8, distance9, distance10,
+                                                 milesToVilla, winesOffered,
+                                                 wineTypesHead));
     }
     
     inFile.close();

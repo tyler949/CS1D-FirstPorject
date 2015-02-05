@@ -8,6 +8,6 @@
 #include "WineryClass.h"
 using namespace std;
 
-void PropagateVector(vector<WineryClass>& passedFirstVec);
+void PropagateVector(vector<WineryClass*>& passedFirstVec);
 
 #endif
