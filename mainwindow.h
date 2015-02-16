@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "viewwinerieswindow.h"
+#include "plandaytrip.h"
 
 namespace Ui {
 class MainWindow;
@@ -21,9 +22,12 @@ private slots:
 
     void on_viewWineries_clicked();
 
+    void on_planADayTrip_clicked();
+
 private:
     Ui::MainWindow *ui;
     viewWineriesWindow *viewWineries;
+    planDayTrip *dayTrip;
 };
 
 #endif // MAINWINDOW_H

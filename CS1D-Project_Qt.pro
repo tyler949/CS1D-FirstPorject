@@ -17,7 +17,9 @@ SOURCES += main.cpp\
     winetype.cpp \
     wineryclass.cpp \
     propagatevector.cpp \
-    viewwinerieswindow.cpp
+    viewwinerieswindow.cpp \
+    plandaytrip.cpp \
+    planshortesttrip.cpp
 
 HEADERS  += mainwindow.h \
     winerie.h \
@@ -25,13 +27,16 @@ HEADERS  += mainwindow.h \
     winetype.h \
     main.h \
     wineryclass.h \
-    viewwinerieswindow.h
+    viewwinerieswindow.h \
+    plandaytrip.h \
+    planshortesttrip.h
 
 FORMS    += mainwindow.ui \
-    viewwinerieswindow.ui
+    viewwinerieswindow.ui \
+    plandaytrip.ui \
+    planshortesttrip.ui
 
 DISTFILES += \
     winerytextfile.txt
 
-RESOURCES += \
-    images.qrc
+RESOURCES +=

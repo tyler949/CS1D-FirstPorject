@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "viewwinerieswindow.h"
+#include "plandaytrip.h"
 #include <QMessageBox>
 #include <QString>
 #include <iostream>
@@ -34,7 +35,14 @@ void MainWindow::on_quit_clicked()
 
 void MainWindow::on_viewWineries_clicked()
 {
-    viewWineries = new viewWineriesWindow;
+    viewWineries = new viewWineriesWindow(this);
     this->close();
     viewWineries->exec();
+}
+
+void MainWindow::on_planADayTrip_clicked()
+{
+    dayTrip = new planDayTrip(this);
+    this->close();
+    dayTrip->exec();
 }
