@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Main Menu</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QPushButton{background-color: #ccc;}
+
+QPushButton:hover
+{
+background: #eee;
+cursor: pointer;
+  
+}
+MainWindow
+{
+background: #333;
+}
+QPushButton {  border: 2px solid #666;border-radius: 5px;z-index:1000;}
+
+QPushButton#viewWineries
+{ 
+height:100px;
+}
+QLabel#label
+{
+  font-family:verdana;
+   background:#eee; 
+  padding:10px;
+display: block; 
+  border: 2px solid #666;border-radius: 5px;}
+#label_2
+{
+background:#000;
+padding:10px;
+}
+#columnView
+{z-index: 0; 
+background:#666;
+} </string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>381</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>  &lt;b&gt;Welcome&lt;/b&gt; to Straight Ahead Wine Tours of the Central Coast</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="viewWineries">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>90</y>
+      <width>211</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>View Wineries</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="planADayTrip">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>130</y>
+      <width>211</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Plan a Day Trip</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="tourAndPurchaseWines">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>170</y>
+      <width>211</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Tour Wineries and Purchase Wines</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="quit">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>210</y>
+      <width>211</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Quit</string>
+    </property>
+   </widget>
+   <widget class="QColumnView" name="columnView">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>80</y>
+      <width>231</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+   </widget>
+   <zorder>columnView</zorder>
+   <zorder>label</zorder>
+   <zorder>viewWineries</zorder>
+   <zorder>planADayTrip</zorder>
+   <zorder>tourAndPurchaseWines</zorder>
+   <zorder>quit</zorder>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

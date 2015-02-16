@@ -1,11 +1,7 @@
-#ifndef WINERIE_H_
-#define WINERIE_H_
+#include <vector>
 
-class Winerie
-{
-	Winerie();
-	~Winerie();
-	void PrintOnClose() const; // Print list of queues into
-						      // the text file
-};
-#endif
+#ifndef WINERIE_H
+#define WINERIE_H
+
+#endif // WINERIE_H
+
