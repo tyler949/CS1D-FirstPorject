@@ -19,7 +19,9 @@ SOURCES += main.cpp\
     propagatevector.cpp \
     viewwinerieswindow.cpp \
     plandaytrip.cpp \
-    planshortesttrip.cpp
+    planshortesttrip.cpp \
+    displaytrip.cpp \
+    plancustomtrip.cpp
 
 HEADERS  += mainwindow.h \
     winerie.h \
@@ -29,12 +31,16 @@ HEADERS  += mainwindow.h \
     wineryclass.h \
     viewwinerieswindow.h \
     plandaytrip.h \
-    planshortesttrip.h
+    planshortesttrip.h \
+    displaytrip.h \
+    plancustomtrip.h
 
 FORMS    += mainwindow.ui \
     viewwinerieswindow.ui \
     plandaytrip.ui \
-    planshortesttrip.ui
+    planshortesttrip.ui \
+    displaytrip.ui \
+    plancustomtrip.ui
 
 DISTFILES += \
     winerytextfile.txt

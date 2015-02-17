@@ -2,6 +2,7 @@
 #define PLANSHORTESTTRIP_H
 
 #include <QDialog>
+#include "displaytrip.h"
 
 namespace Ui {
 class planShortestTrip;
@@ -17,8 +18,13 @@ public:
 
 private slots:
 
+    void on_pushButton_clicked();
+
 private:
     Ui::planShortestTrip *ui;
+    QWidget *mainMenu;
+    DisplayTrip *tripDisplay;
+
 };
 
 #endif // PLANSHORTESTTRIP_H

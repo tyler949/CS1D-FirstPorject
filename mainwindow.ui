@@ -131,12 +131,26 @@ background:#666;
      <string notr="true"/>
     </property>
    </widget>
+   <widget class="QPushButton" name="quit_2">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>270</y>
+      <width>91</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Admin Login</string>
+    </property>
+   </widget>
    <zorder>columnView</zorder>
    <zorder>label</zorder>
    <zorder>viewWineries</zorder>
    <zorder>planADayTrip</zorder>
    <zorder>tourAndPurchaseWines</zorder>
    <zorder>quit</zorder>
+   <zorder>quit_2</zorder>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
