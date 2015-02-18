@@ -19,14 +19,14 @@ planDayTrip::~planDayTrip()
 
 void planDayTrip::on_pushButton_clicked()
 {
-    this->close();
+    this->reject();
     mainMenu->show();
 }
 
 void planDayTrip::on_planShortestTrip_clicked()
 {
     planShortest = new planShortestTrip(mainMenu);
-    this->close();
+    this->reject();
     planShortest->show();
 }
 
@@ -34,13 +34,13 @@ void planDayTrip::on_planShortestTrip_clicked()
 void planDayTrip::on_planADayTrip_clicked()
 {
     planCustom = new planCustomTrip(mainMenu);
-    this->close();
+    this->reject();
     planCustom->show();
 }
 
 void planDayTrip::on_tourAndPurchaseWines_clicked()
 {
     tripDisplay = new DisplayTrip(mainMenu);
-    this->hide();
+    this->reject();
     tripDisplay->show();
 }

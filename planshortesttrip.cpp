@@ -18,6 +18,6 @@ planShortestTrip::~planShortestTrip()
 void planShortestTrip::on_pushButton_clicked()
 {
     tripDisplay = new DisplayTrip(mainMenu);
-    this->close();
+    this->reject();
     tripDisplay->show();
 }

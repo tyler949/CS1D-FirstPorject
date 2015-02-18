@@ -17,6 +17,6 @@ planCustomTrip::~planCustomTrip()
 void planCustomTrip::on_pushButton_clicked()
 {
     tripDisplay = new DisplayTrip(mainMenu);
-    this->hide();
+    this->reject();
     tripDisplay->show();
 }

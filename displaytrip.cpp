@@ -16,6 +16,6 @@ DisplayTrip::~DisplayTrip()
 
 void DisplayTrip::on_pushButton_clicked()
 {
-    this->close();
+    this->reject();
     mainMenu->show();
 }

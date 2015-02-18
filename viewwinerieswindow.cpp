@@ -16,6 +16,6 @@ viewWineriesWindow::~viewWineriesWindow()
 
 void viewWineriesWindow::on_pushButton_clicked()
 {
-    this->close();
+    this->reject();
     mainMenu->show();
 }
