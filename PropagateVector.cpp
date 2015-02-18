@@ -82,32 +82,18 @@ void PropagateVector(vector<WineryClass*>& passedFirstVec)
     inFile.close();
 }
 
+//change to make 
+// for (int i = 0; i < winesOffered; i++)
+// {
+//     getline(inFile, wineTypeName);
+//     inFile >> wineYear;
+//     inFile.ignore(1000, '\n');
+//     inFile >> wineCost;
+//     inFile.ignore(1000, '\n');
+//     temp.setYear(wineYear);
+//     temp.setCost(wineCost);
+//     temp.setName(wineTypeName);
 
+//     tempWineTypeVector.pushback(temp);
 
-//makes a list of the wines offered and passes the list to the
-//constructor
-
-//        for (int j = 1; j <= winesOffered; j++)
-//        {
-//            getline(inFile, wineTypeName);
-//            inFile >> wineYear;
-//            inFile.ignore(1000, '\n');
-//            inFile >> wineCost;
-//            inFile.ignore(1000, '\n');
-//
-//            if (wineTypesHead == NULL)
-//            {
-//                wineTypesHead = new wineType(wineTypeName, wineYear,
-//                                            wineCost);
-//                wineTypesTail = wineTypesHead;
-//                wineTypesHead->next = NULL;
-//            }
-//            else
-//            {
-//                wineTypesTemp = new wineType(wineTypeName, wineYear,
-//                                             wineCost);
-//                wineTypesTemp->next = wineTypesTail->next;
-//                wineTypesTail->next = wineTypesTemp;
-//                wineTypesTail = wineTypesTail->next;
-//            }
-//        }
+// }
