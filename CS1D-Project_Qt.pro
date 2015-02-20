@@ -46,7 +46,12 @@ FORMS    += mainwindow.ui \
     displaytrip.ui \
     plancustomtrip.ui \
     tourwineries.ui \
-    shopforwine.ui
+    shopforwine.ui \
+    AdminLogin.ui \
+    AdminMenu.ui \
+    AdminAddWinery.ui \
+    AdminAddWine.ui \
+    AdminChangePrice.ui
 
 DISTFILES += \
     winerytextfile.txt
