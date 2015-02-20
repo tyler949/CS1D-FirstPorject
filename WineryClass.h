@@ -16,17 +16,15 @@ private:
     string name;
     int wineryNumber;
     int numberOfWinerys;
-    vector <double> distanceVec();
+    vector <double> distanceVec;
     double milesToVilla;
     int winesOffered;
-    vector <wineType> winesVec();
+    vector <wineType> winesVec;
     
 public:
-    //non-default constructor used with building from the file
-    WineryClass(string passedName, int passedWineryNumber,
-                int passedNumberOfWinerys, vector<double>& passedDistanceVec,
-                double passedMilesToVilla, int passedWinesOffered,
-                vector<wineType>& passedWineTypeVector);
+    //default constructor
+    WineryClass();
+    ~WineryClass();
     
     //accessors
     string  getWineryName();
@@ -55,8 +53,12 @@ public:
     void setWineYear(int x, int passedWineYear);
     void setWineCost(int x, double passedWineCost);
 
-    
-
 };
 
 #endif
+
+////non-default constructor used with building from the file
+//WineryClass(string passedName, int passedWineryNumber,
+//            int passedNumberOfWinerys, vector<double>& passedDistanceVec,
+//            double passedMilesToVilla, int passedWinesOffered,
+//            vector<wineType>& passedWineTypeVector);
