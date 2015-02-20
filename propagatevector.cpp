@@ -1,3 +1,4 @@
+
 #include <fstream>
 #include "main.h"
 #include "wineType.h"
@@ -140,5 +141,4 @@ void PropagateVector(vector<WineryClass*>& passedFirstVec)
 
     inFile.close();
 }
-
 

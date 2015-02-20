@@ -3,16 +3,17 @@
 #include "viewwinerieswindow.h"
 #include "plandaytrip.h"
 #include "tourwineries.h"
-
+#include "wineryclass.h"
 #include <QMessageBox>
 #include <QString>
 #include <iostream>
 
-MainWindow::MainWindow(QWidget *parent) :
+MainWindow::MainWindow(QWidget *parent,vector<WineryClass*> *firstVec) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    wineryList = firstVec;
 }
 
 MainWindow::~MainWindow()

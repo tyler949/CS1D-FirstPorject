@@ -1,4 +1,4 @@
-#include "wineType.h"
+#include "winetype.h"
 
 wineType::wineType(string wine1, int wineYear1, double wineCost1)
 {

@@ -22,6 +22,7 @@ Zinfandel
 Old Vines Zinfandel
 2001
 19.50
+
 name of winery: Castoro Cellars
 winery number 2
 distance to other wineries - 10
@@ -49,6 +50,7 @@ Zinfandel
 Late Harvest Zinfandel
 2001
 22.50
+
 name of winery: Chumeia
 winery number 3
 distance to other wineries - 10
@@ -70,6 +72,7 @@ Voignier
 Pinot Noir
 2001
 16.00
+
 name of winery: Eberle Winery
 winery number 4
 distance to other wineries - 10
@@ -94,6 +97,7 @@ Zinfandel
 Chardonnay
 2002
 20.00
+
 name of winery: Jan Kris Winery
 winery number 5
 distance to other wineries - 10
@@ -115,6 +119,7 @@ Zinfandel
 Zinfandel Port
 2002
 16.00
+
 name of winery: L'Aventure
 winery number 6
 distance to other wineries - 10
@@ -133,6 +138,7 @@ distance to other wineries - 10
 Optimus
 2001
 28.00
+
 name of winery: Norman Vineyards
 winery number 7
 distance to other wineries - 10
@@ -160,6 +166,7 @@ Zinfandel "The Classic"
 Zinfandel "The Monster"
 2002
 16.50
+
 name of winery: Opolo Vineyards
 winery number 8
 distance to other wineries - 10
@@ -184,6 +191,7 @@ Pinot Noir
 Zinfandel
 2002
 18.00
+
 name of winery: Pipestone Vineyards
 winery number 9
 distance to other wineries - 10
@@ -208,6 +216,7 @@ Syrah
 Syrah
 2002
 16.50
+
 name of winery: Tablas Creek Vineyard
 winery number 10
 distance to other wineries - 10

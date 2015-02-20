@@ -1,3 +1,5 @@
+
+
 #ifndef __CS1D_FirstProject_winery__WineryClass__
 #define __CS1D_FirstProject_winery__WineryClass__
 
@@ -31,7 +33,6 @@ public:
                 double passedDistance8, double passedDistance9,
                 double passedDistance10, double passedMilesToVilla,
                 int passedWinesOffered, wineType*& passedWineTypesPtr);
-
 };
 
 #endif
