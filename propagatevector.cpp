@@ -2,143 +2,87 @@
 #include <fstream>
 #include "main.h"
 #include "wineType.h"
-
-void PropagateVector(vector<WineryClass*>& passedFirstVec)
+#include <qdebug.h>
+#include <QFile>
+void PropagateVector(vector<WineryClass>& passedFirstVec)
 {
-    wineType* wineTypesHead = NULL;
-    wineType* wineTypesTail = NULL;
-    wineType* wineTypesTemp = NULL;
+    const int ARSIZE1 = 10;
+    const int ARSIZE2 = 10;
+    vector<double> tempDistanceVector(ARSIZE1);
+    vector<wineType> tempWineTypeVector(ARSIZE2);
+    wineType temp;
+    WineryClass tempWinery;
 
     string wineryName;
     int wineryNumber;
     int numberOfWinerys;
-    double distance1;
-    double distance2;
-    double distance3;
-    double distance4;
-    double distance5;
-    double distance6;
-    double distance7;
-    double distance8;
-    double distance9;
-    double distance10;
     double milesToVilla;
     int winesOffered;
+    double tempDistance;
     string wineTypeName;
     int wineYear;
     double wineCost;
 
     ifstream inFile;
-    //this is how i have to open files on mac
-    inFile.open("Macintosh HD/Users/tylerstevens/Desktop/computer science"
-                "/CS1D/CS1D-FirstProject-winery/CS1D-FirstProject-winery");
-    //this is how to open file from pc
+    //this is how i have to open files on mac *****************************
+    //inFile.open("/Users/tylerstevens/Desktop/computer science/CS1D/CS1D-FirstProject-winery/CS1D-FirstProject-winery/WineryTextFile.txt");
+    //this is how to open file from pc ************************************
     //**comment out the above open code**
-//    inFile.open("WineryTextFile.txt");
+
+    // for QT
+    inFile.open("C:/Users/gdfgdf/Documents/GitHub/CS1D-FirstPorject/winerytextfile.txt");
 
     while (inFile)
     {
         inFile.ignore(1000, ':');
         inFile.ignore(1000, ' ');
         getline(inFile, wineryName, '\n');
+        tempWinery.setWineryName(wineryName);
 
         inFile.ignore(1000, ' ');
         inFile.ignore(1000, ' ');
         inFile >> wineryNumber;
         inFile.ignore(1000, '\n');
+        tempWinery.setWineryNumber(wineryNumber);
 
         inFile.ignore(1000, '-');
         inFile >> numberOfWinerys;
         inFile.ignore(1000, '\n');
+        tempWinery.setNumberOfWinerys(numberOfWinerys);
 
-        inFile.ignore(1000, ' ');
-        inFile >> distance1;
-        inFile.ignore(1000, '\n');
-
-        inFile.ignore(1000, ' ');
-        inFile >> distance2;
-        inFile.ignore(1000, '\n');
-
-        inFile.ignore(1000, ' ');
-        inFile >> distance3;
-        inFile.ignore(1000, '\n');
-
-        inFile.ignore(1000, ' ');
-        inFile >> distance4;
-        inFile.ignore(1000, '\n');
-
-        inFile.ignore(1000, ' ');
-        inFile >> distance5;
-        inFile.ignore(1000, '\n');
-
-        inFile.ignore(1000, ' ');
-        inFile >> distance6;
-        inFile.ignore(1000, '\n');
-
-        inFile.ignore(1000, ' ');
-        inFile >> distance7;
-        inFile.ignore(1000, '\n');
-
-        inFile.ignore(1000, ' ');
-        inFile >> distance8;
-        inFile.ignore(1000, '\n');
-
-        inFile.ignore(1000, ' ');
-        inFile >> distance9;
-        inFile.ignore(1000, '\n');
-
-        inFile.ignore(1000, ' ');
-        inFile >> distance10;
-        inFile.ignore(1000, '\n');
+        for (int i = 0; i < ARSIZE1; i++)
+        {
+            inFile.ignore(1000, ' ');
+            inFile >> tempDistance;
+            tempDistanceVector.push_back(tempDistance);
+            inFile.ignore(1000, '\n');
+        }
 
         inFile >> milesToVilla;
         inFile.ignore(1000, '\n');
+        tempWinery.setMilesToVilla(milesToVilla);
+
         inFile >> winesOffered;
         inFile.ignore(1000, '\n');
+        tempWinery.setWinesOffered(winesOffered);
 
-
-
-        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        //makes a list of the wines offered and passes the list to the
-        //constructor
-
-        for (int j = 1; j <= winesOffered; j++)
+        for (int i = 0; i < winesOffered; i++)
         {
             getline(inFile, wineTypeName);
             inFile >> wineYear;
-            inFile.ignore(1000, '\n');
             inFile >> wineCost;
             inFile.ignore(1000, '\n');
 
-            if (wineTypesHead == NULL)
-            {
-                wineTypesHead = new wineType(wineTypeName, wineYear,
-                                            wineCost);
-                wineTypesTail = wineTypesHead;
-                wineTypesHead->next = NULL;
-            }
-            else
-            {
-                wineTypesTemp = new wineType(wineTypeName, wineYear,
-                                             wineCost);
-                wineTypesTemp->next = wineTypesTail->next;
-                wineTypesTail->next = wineTypesTemp;
-                wineTypesTail = wineTypesTail->next;
-            }
+            temp.setYear(wineYear);
+            temp.setCost(wineCost);
+            temp.setName(wineTypeName);
+
+            tempWineTypeVector.push_back(temp);
         }
 
-        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        passedFirstVec.push_back(tempWinery);
 
-
-        passedFirstVec.push_back(new WineryClass(wineryName, wineryNumber,
-                                                 numberOfWinerys, distance1,
-                                                 distance2, distance3, distance4,
-                                                 distance5, distance6, distance7,
-                                                 distance8, distance9, distance10,
-                                                 milesToVilla, winesOffered,
-                                                 wineTypesHead));
     }
 
     inFile.close();
 }
-

@@ -18,12 +18,12 @@ SOURCES += main.cpp\
     wineryclass.cpp \
     propagatevector.cpp \
     viewwinerieswindow.cpp \
-    plandaytrip.cpp \
     planshortesttrip.cpp \
     displaytrip.cpp \
     plancustomtrip.cpp \
     tourwineries.cpp \
-    shopforwine.cpp
+    shopforwine.cpp \
+    plandaytrip.cpp
 
 HEADERS  += mainwindow.h \
     winerie.h \
@@ -32,16 +32,15 @@ HEADERS  += mainwindow.h \
     main.h \
     wineryclass.h \
     viewwinerieswindow.h \
-    plandaytrip.h \
     planshortesttrip.h \
     displaytrip.h \
     plancustomtrip.h \
     tourwineries.h \
-    shopforwine.h
+    shopforwine.h \
+    plandaytrip.h
 
 FORMS    += mainwindow.ui \
     viewwinerieswindow.ui \
-    plandaytrip.ui \
     planshortesttrip.ui \
     displaytrip.ui \
     plancustomtrip.ui \
@@ -51,7 +50,8 @@ FORMS    += mainwindow.ui \
     AdminMenu.ui \
     AdminAddWinery.ui \
     AdminAddWine.ui \
-    AdminChangePrice.ui
+    AdminChangePrice.ui \
+    plandaytrip.ui
 
 DISTFILES += \
     winerytextfile.txt

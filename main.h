@@ -1,3 +1,5 @@
+
+
 #ifndef CS1D_FirstProject_winery_main_h
 #define CS1D_FirstProject_winery_main_h
 
@@ -6,6 +8,6 @@
 #include "WineryClass.h"
 using namespace std;
 
-void PropagateVector(vector<WineryClass*>& passedFirstVec);
+void PropagateVector(vector<WineryClass>& passedFirstVec);
 
 #endif

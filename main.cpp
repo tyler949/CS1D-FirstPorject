@@ -3,20 +3,18 @@
 #include "wineryclass.h"
 #include "propagatevector.cpp"
 #include "winetype.h"
-
+#include <iostream>
+#include <QTextStream>
 #include <vector>
+#include <QDebug>
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    vector<WineryClass*> firstVec(30);
+    vector<WineryClass> firstVec;
     PropagateVector(firstVec);
 
-    vector<WineryClass*> *passVector;
-
-    passVector = &firstVec;
-
-    MainWindow w(0,passVector);
+    MainWindow w(0,&firstVec);
 
     w.show();
 

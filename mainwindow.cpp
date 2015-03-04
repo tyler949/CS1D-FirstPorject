@@ -7,13 +7,26 @@
 #include <QMessageBox>
 #include <QString>
 #include <iostream>
+#include <QDebug>
+#include <QTextStream>
 
-MainWindow::MainWindow(QWidget *parent,vector<WineryClass*> *firstVec) :
+MainWindow::MainWindow(QWidget *parent,vector<WineryClass> *firstVec) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
+    QTextStream out(stdout);
     ui->setupUi(this);
     wineryList = firstVec;
+    /*for (int i = 0; i < wineryList->size(); i++)
+    {
+
+        out << QString("Some text");
+        out << QString("*********************");
+        out << QString("test ");
+        QString test = QString::fromStdString(wineryList->at(i).getWineryName());
+        out <<  QString(test);
+        out << endl;
+    }*/
 }
 
 MainWindow::~MainWindow()
@@ -38,14 +51,14 @@ void MainWindow::on_quit_clicked()
 
 void MainWindow::on_viewWineries_clicked()
 {
-    viewWineries = new viewWineriesWindow(this);
+    viewWineries = new viewWineriesWindow(this,wineryList);
     this->close();
     viewWineries->exec();
 }
 
 void MainWindow::on_planADayTrip_clicked()
 {
-    dayTrip = new planDayTrip(this);
+    dayTrip = new planDayTrip(this,wineryList);
     this->close();
     dayTrip->exec();
 }

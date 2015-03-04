@@ -3,6 +3,8 @@
 
 #include <QDialog>
 #include "displaytrip.h"
+#include <vector>
+#include "wineryclass.h"
 
 namespace Ui {
 class planShortestTrip;
@@ -13,7 +15,7 @@ class planShortestTrip : public QDialog
     Q_OBJECT
 
 public:
-    explicit planShortestTrip(QWidget *parent = 0);
+    explicit planShortestTrip(QWidget *parent = 0,vector<WineryClass> *firstVec = 0);
     ~planShortestTrip();
 
 private slots:
@@ -24,6 +26,7 @@ private:
     Ui::planShortestTrip *ui;
     QWidget *mainMenu;
     DisplayTrip *tripDisplay;
+    vector<WineryClass> *wineryList;
 
 };
 

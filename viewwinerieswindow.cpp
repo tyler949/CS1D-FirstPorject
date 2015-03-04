@@ -1,14 +1,35 @@
 #include "viewwinerieswindow.h"
 #include "ui_viewwinerieswindow.h"
 #include <QLabel>
-viewWineriesWindow::viewWineriesWindow(QWidget *parent) :
+#include <QString>
+#include <QTextStream>
+#include <QLabel>
+#include <QList>
+#include <QFormLayout>
+#include <QColumnView>
+#include <QVector>
+#include <QComboBox>
+
+viewWineriesWindow::viewWineriesWindow(QWidget *parent,vector<WineryClass> *firstVec) :
     QDialog(parent),
     ui(new Ui::viewWineriesWindow)
 {
     ui->setupUi(this);
-    mainMenu = parent;
+    mainMenu   = parent;
+    wineryList = firstVec;
 
+    for(int i=0;i< wineryList->size();i++)
+    {
+        QListWidgetItem *Item,*Item2;
+        Item = new QListWidgetItem();
+        Item->setText(QString::fromStdString(wineryList->at(i).getWineryName()));
 
+        Item2 = new QListWidgetItem();
+        Item2->setText(QString::number(wineryList->at(i).getWinesOffered()));
+
+        ui->listWidget->addItem(Item);
+        ui->winesOffered->addItem(Item2);
+    }
 }
 
 viewWineriesWindow::~viewWineriesWindow()

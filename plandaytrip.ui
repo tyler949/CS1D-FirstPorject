@@ -52,37 +52,11 @@ padding:10px;
 background:#666;
 }  </string>
   </property>
-  <widget class="QPushButton" name="planShortestTrip">
-   <property name="geometry">
-    <rect>
-     <x>100</x>
-     <y>50</y>
-     <width>211</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Plan the Shortest Trip</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="tourAndPurchaseWines">
-   <property name="geometry">
-    <rect>
-     <x>100</x>
-     <y>130</y>
-     <width>211</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>View All Wineries</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="planADayTrip">
    <property name="geometry">
     <rect>
      <x>100</x>
-     <y>90</y>
+     <y>80</y>
      <width>211</width>
      <height>31</height>
     </rect>
@@ -91,24 +65,11 @@ background:#666;
     <string>Plan a Custom Trip</string>
    </property>
   </widget>
-  <widget class="QColumnView" name="columnView">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>40</y>
-     <width>231</width>
-     <height>131</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true"/>
-   </property>
-  </widget>
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
      <x>130</x>
-     <y>190</y>
+     <y>180</y>
      <width>151</width>
      <height>31</height>
     </rect>
@@ -117,11 +78,50 @@ background:#666;
     <string>Back To Menu</string>
    </property>
   </widget>
+  <widget class="QColumnView" name="columnView">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>30</y>
+     <width>231</width>
+     <height>131</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="planShortestTrip">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>40</y>
+     <width>211</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Plan the Shortest Trip</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="planADayTrip_2">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>120</y>
+     <width>211</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>View All Wineries</string>
+   </property>
+  </widget>
   <zorder>columnView</zorder>
-  <zorder>planShortestTrip</zorder>
-  <zorder>tourAndPurchaseWines</zorder>
   <zorder>planADayTrip</zorder>
   <zorder>pushButton</zorder>
+  <zorder>planShortestTrip</zorder>
+  <zorder>planADayTrip_2</zorder>
  </widget>
  <resources/>
  <connections/>

@@ -2,6 +2,8 @@
 #define DISPLAYTRIP_H
 
 #include <QDialog>
+#include <vector>
+#include "wineryclass.h"
 
 namespace Ui {
 class DisplayTrip;
@@ -12,7 +14,11 @@ class DisplayTrip : public QDialog
     Q_OBJECT
 
 public:
-    explicit DisplayTrip(QWidget *parent = 0);
+    explicit DisplayTrip(QWidget *parent = 0,vector<WineryClass> *firstVec = 0,
+                         int itemChosen = 0,
+                         int totalAmount = 0, // can be total miles or total to visit
+                         vector<int> *listOfWineries = 0
+                         );
     ~DisplayTrip();
 
 private slots:
@@ -21,6 +27,11 @@ private slots:
 private:
     Ui::DisplayTrip *ui;
     QWidget *mainMenu;
+    vector<WineryClass> *wineryList;
+    int itemIndex;
+    int totalToVisit;
+    int *totalMiles;
+    vector<int> *wineriesToVisit;
 };
 
 #endif // DISPLAYTRIP_H

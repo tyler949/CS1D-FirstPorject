@@ -30,19 +30,22 @@ QDialog QPushButton {  border: 2px solid #666;border-radius: 5px;z-index:1000;}
 
  
           
-QDialog #visiting,#label_2,QSpinBox
+QDialog #visiting,#label_2,QSpinBox,#label
 {
  	color: #fff; 
    background: #666;
 } 
 #columnView
-{z-index: 0; 
-background:#666;
+{z-index: 0;  
 }  
 QListWidget
 {
   background:#999; 
 color: #fff;
+}
+QColumnView
+{
+  background:#ccc; 
 }</string>
   </property>
   <widget class="QLabel" name="visiting">
@@ -67,21 +70,6 @@ color: #fff;
      <height>111</height>
     </rect>
    </property>
-   <item>
-    <property name="text">
-     <string>First Item</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Second item</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>third item </string>
-    </property>
-   </item>
   </widget>
   <widget class="QLabel" name="label_2">
    <property name="geometry">
@@ -96,16 +84,6 @@ color: #fff;
     <string> Total miles to travel</string>
    </property>
   </widget>
-  <widget class="QSpinBox" name="spinBox">
-   <property name="geometry">
-    <rect>
-     <x>260</x>
-     <y>170</y>
-     <width>101</width>
-     <height>31</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
@@ -117,6 +95,19 @@ color: #fff;
    </property>
    <property name="text">
     <string>Back To Menu</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>170</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
    </property>
   </widget>
  </widget>

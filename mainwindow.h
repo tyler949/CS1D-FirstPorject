@@ -18,7 +18,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = 0,vector<WineryClass*> *firstVec = 0);
+    explicit MainWindow(QWidget *parent = 0,vector<WineryClass> *firstVec = 0);
     ~MainWindow();
 
 private slots:
@@ -35,7 +35,7 @@ private:
     viewWineriesWindow *viewWineries;
     planDayTrip *dayTrip;
     tourWineries *tourWines;
-    vector<WineryClass*> *wineryList;
+    vector<WineryClass> *wineryList;
 };
 
 #endif // MAINWINDOW_H
