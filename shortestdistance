@@ -1,0 +1,28 @@
+
+#include "WineryClass.h"
+void shortestDistance(vector<WineryClass> winvec, int start, int num, vector<WineryClass> &tripvec)
+{
+	double smallest;
+
+	int smallestPntr = 999999999;
+	int previous     = 	99999999;
+	int k = start;
+	for(int i = start; i <= num; i++)
+	{
+		WineryClass temp = winvec.at(k);
+		smallest = temp.getDistance(0);
+		for(int count = 1; count < winvec.size(); count++)
+		{
+
+			if(smallest > temp.getDistance(count) && temp.getDistance(count) != 0 && count != previous)
+			{
+				smallest = temp.getDistance(count);
+				smallestPntr = count;
+			}
+		}
+		tripvec.push_back(winvec.at(smallestPntr));
+		previous = k;
+		k = smallestPntr;
+	}
+
+}
