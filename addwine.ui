@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>addwine</class>
+ <widget class="QDialog" name="addwine">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QComboBox" name="WineryDropDownBox">
+   <property name="geometry">
+    <rect>
+     <x>179</x>
+     <y>47</y>
+     <width>161</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Propagate from winery vector</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLineEdit" name="PriceTextBox">
+   <property name="geometry">
+    <rect>
+     <x>179</x>
+     <y>167</y>
+     <width>113</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="PriceLabel">
+   <property name="geometry">
+    <rect>
+     <x>79</x>
+     <y>167</y>
+     <width>46</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Price</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="YearLabel">
+   <property name="geometry">
+    <rect>
+     <x>79</x>
+     <y>127</y>
+     <width>46</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Year</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="AddWineButton">
+   <property name="geometry">
+    <rect>
+     <x>109</x>
+     <y>217</y>
+     <width>171</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Add Wine</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="TypeOfWineTextBox">
+   <property name="geometry">
+    <rect>
+     <x>179</x>
+     <y>87</y>
+     <width>113</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="TypeOfWineLabel">
+   <property name="geometry">
+    <rect>
+     <x>79</x>
+     <y>87</y>
+     <width>81</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Type of Wine</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="YearTextBox">
+   <property name="geometry">
+    <rect>
+     <x>179</x>
+     <y>127</y>
+     <width>113</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="WineryLabel">
+   <property name="geometry">
+    <rect>
+     <x>79</x>
+     <y>47</y>
+     <width>51</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Winery</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

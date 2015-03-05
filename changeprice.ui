@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>changeprice</class>
+ <widget class="QDialog" name="changeprice">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QComboBox" name="YearComboBox">
+   <property name="geometry">
+    <rect>
+     <x>161</x>
+     <y>142</y>
+     <width>171</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Propagate from Wine Vector</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QComboBox" name="TypeOfWineComboBox">
+   <property name="geometry">
+    <rect>
+     <x>161</x>
+     <y>92</y>
+     <width>171</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Propagate from Wine Vector</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLineEdit" name="NewPriceTextBox">
+   <property name="geometry">
+    <rect>
+     <x>161</x>
+     <y>182</y>
+     <width>171</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="WineryComboBox">
+   <property name="geometry">
+    <rect>
+     <x>161</x>
+     <y>42</y>
+     <width>171</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Propagate from Winery Vector</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="WineryLabel">
+   <property name="geometry">
+    <rect>
+     <x>91</x>
+     <y>42</y>
+     <width>46</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Winery</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="EnterNewPriceLabel">
+   <property name="geometry">
+    <rect>
+     <x>61</x>
+     <y>182</y>
+     <width>91</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Enter New Price</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="ConfirmChangeButton">
+   <property name="geometry">
+    <rect>
+     <x>71</x>
+     <y>232</y>
+     <width>261</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Confirm Change</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="TypeOfWineLabel">
+   <property name="geometry">
+    <rect>
+     <x>71</x>
+     <y>92</y>
+     <width>71</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Type of Wine</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="YearLabel">
+   <property name="geometry">
+    <rect>
+     <x>101</x>
+     <y>142</y>
+     <width>46</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Year</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

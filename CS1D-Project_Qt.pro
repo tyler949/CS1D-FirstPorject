@@ -23,7 +23,12 @@ SOURCES += main.cpp\
     plancustomtrip.cpp \
     tourwineries.cpp \
     shopforwine.cpp \
-    plandaytrip.cpp
+    plandaytrip.cpp \
+    login.cpp \
+    admenu.cpp \
+    newwinery.cpp \
+    addwine.cpp \
+    changeprice.cpp
 
 HEADERS  += mainwindow.h \
     winerie.h \
@@ -37,7 +42,12 @@ HEADERS  += mainwindow.h \
     plancustomtrip.h \
     tourwineries.h \
     shopforwine.h \
-    plandaytrip.h
+    plandaytrip.h \
+    login.h \
+    admenu.h \
+    newwinery.h \
+    addwine.h \
+    changeprice.h
 
 FORMS    += mainwindow.ui \
     viewwinerieswindow.ui \
@@ -46,12 +56,12 @@ FORMS    += mainwindow.ui \
     plancustomtrip.ui \
     tourwineries.ui \
     shopforwine.ui \
-    AdminLogin.ui \
-    AdminMenu.ui \
-    AdminAddWinery.ui \
-    AdminAddWine.ui \
-    AdminChangePrice.ui \
-    plandaytrip.ui
+    plandaytrip.ui \
+    login.ui \
+    admenu.ui \
+    newwinery.ui \
+    addwine.ui \
+    changeprice.ui
 
 DISTFILES += \
     winerytextfile.txt
