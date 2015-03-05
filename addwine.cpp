@@ -1,5 +1,6 @@
 #include "addwine.h"
 #include "ui_addwine.h"
+#include "admenu.h"
 
 addwine::addwine(QWidget *parent) :
     QDialog(parent),
@@ -11,4 +12,8 @@ addwine::addwine(QWidget *parent) :
 addwine::~addwine()
 {
     delete ui;
+}
+
+void addwine::on_AddWineButton_clicked()
+{
 }

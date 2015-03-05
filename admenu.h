@@ -2,6 +2,10 @@
 #define ADMENU_H
 
 #include <QDialog>
+#include "newwinery.h"
+#include "addwine.h"
+#include "changeprice.h"
+#include "mainwindow.h"
 
 namespace Ui {
 class admenu;
@@ -15,8 +19,21 @@ public:
     explicit admenu(QWidget *parent = 0);
     ~admenu();
 
+private slots:
+    void on_AddWineriesButton_clicked();
+
+    void on_AddWineButton_clicked();
+
+    void on_ChangeWinePriceButton_clicked();
+
+    void on_ReturnToMenuButton_clicked();
+
 private:
     Ui::admenu *ui;
+    QWidget *login;
+//    addwine *wine;
+//    changeprice *price;
+
 };
 
 #endif // ADMENU_H

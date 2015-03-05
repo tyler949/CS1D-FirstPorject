@@ -1,5 +1,6 @@
 #include "newwinery.h"
 #include "ui_newwinery.h"
+#include "admenu.h"
 
 newwinery::newwinery(QWidget *parent) :
     QDialog(parent),
@@ -11,4 +12,9 @@ newwinery::newwinery(QWidget *parent) :
 newwinery::~newwinery()
 {
     delete ui;
+}
+
+void newwinery::on_AddWineryButton_clicked()
+{
+
 }

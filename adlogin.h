@@ -2,6 +2,10 @@
 #define ADLOGIN_H
 
 #include <QDialog>
+#include "ui_adlogin.h"
+#include "admenu.h"
+
+
 
 namespace Ui {
 class adlogin;
@@ -15,8 +19,16 @@ public:
     explicit adlogin(QWidget *parent = 0);
     ~adlogin();
 
+private slots:
+    void on_LoginButton_clicked();
+
 private:
     Ui::adlogin *ui;
+    QWidget *mainMenu;
+    //admenu *menu;
+
+
+
 };
 
 #endif // ADLOGIN_H

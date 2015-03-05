@@ -7,6 +7,7 @@
 #include "viewwinerieswindow.h"
 #include "plandaytrip.h"
 #include "tourwineries.h"
+#include "adlogin.h"
 #include <QVector>
 
 namespace Ui {
@@ -37,7 +38,7 @@ private:
     viewWineriesWindow *viewWineries;
     planDayTrip *dayTrip;
     tourWineries *tourWines;
-    login *login;
+//    adlogin *login;
     vector<WineryClass> *wineryList;
 };
 

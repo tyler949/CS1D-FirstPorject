@@ -72,5 +72,7 @@ void MainWindow::on_tourAndPurchaseWines_clicked()
 
 void MainWindow::on_AdminLogin_clicked()
 {
-
+//    login = new adlogin(this);
+//    this->close();
+//    login->show();
 }
