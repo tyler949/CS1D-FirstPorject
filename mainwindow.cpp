@@ -69,3 +69,8 @@ void MainWindow::on_tourAndPurchaseWines_clicked()
     this->hide();
     tourWines->show();
 }
+
+void MainWindow::on_AdminLogin_clicked()
+{
+
+}

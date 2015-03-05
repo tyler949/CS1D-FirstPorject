@@ -30,11 +30,14 @@ private slots:
 
     void on_tourAndPurchaseWines_clicked();
 
+    void on_AdminLogin_clicked();
+
 private:
     Ui::MainWindow *ui;
     viewWineriesWindow *viewWineries;
     planDayTrip *dayTrip;
     tourWineries *tourWines;
+    login *login;
     vector<WineryClass> *wineryList;
 };
 
