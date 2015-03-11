@@ -1,8 +1,8 @@
+
 #ifndef ADLOGIN_H
 #define ADLOGIN_H
 
 #include <QDialog>
-#include "ui_adlogin.h"
 #include "admenu.h"
 
 
@@ -20,7 +20,7 @@ public:
     ~adlogin();
 
 private slots:
-    void on_LoginButton_clicked();
+    //void on_LoginButton_clicked();
 
 private:
     Ui::adlogin *ui;

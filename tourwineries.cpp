@@ -1,12 +1,13 @@
 #include "tourwineries.h"
 #include "ui_tourwineries.h"
 
-tourWineries::tourWineries(QWidget *parent) :
+tourWineries::tourWineries(QWidget *parent,int current) :
     QDialog(parent),
     ui(new Ui::tourWineries)
 {
     ui->setupUi(this);
     mainMenu = parent;
+    currentWinery = current;
 }
 tourWineries::~tourWineries()
 {

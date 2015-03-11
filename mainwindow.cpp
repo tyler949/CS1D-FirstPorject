@@ -65,14 +65,16 @@ void MainWindow::on_planADayTrip_clicked()
 
 void MainWindow::on_tourAndPurchaseWines_clicked()
 {
-    tourWines = new tourWineries(this);
+    // Touring wineries will go through each winery so we will be with 0
+    int currentWinery = 0;
+    tourWines = new tourWineries(this,currentWinery);
     this->hide();
     tourWines->show();
 }
 
 void MainWindow::on_AdminLogin_clicked()
 {
-//    login = new adlogin(this);
-//    this->close();
-//    login->show();
+    login = new adlogin(this);
+    this->close();
+    login->show();
 }

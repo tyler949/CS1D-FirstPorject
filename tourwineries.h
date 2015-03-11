@@ -12,7 +12,7 @@ class tourWineries : public QDialog
     Q_OBJECT
 
 public:
-    explicit tourWineries(QWidget *parent = 0);
+    explicit tourWineries(QWidget *parent = 0,int current = 0);
     ~tourWineries();
 
 private slots:
@@ -23,6 +23,7 @@ private slots:
 private:
     Ui::tourWineries *ui;
     QWidget *mainMenu;
+    int currentWinery;
 };
 
 #endif // TOURWINERIES_H

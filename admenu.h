@@ -5,7 +5,6 @@
 #include "newwinery.h"
 #include "addwine.h"
 #include "changeprice.h"
-#include "mainwindow.h"
 
 namespace Ui {
 class admenu;

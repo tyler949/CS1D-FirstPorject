@@ -38,7 +38,7 @@ private:
     viewWineriesWindow *viewWineries;
     planDayTrip *dayTrip;
     tourWineries *tourWines;
-//    adlogin *login;
+    adlogin *login;
     vector<WineryClass> *wineryList;
 };
 
