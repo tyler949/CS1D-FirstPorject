@@ -17,8 +17,6 @@ planCustomTrip::planCustomTrip(QWidget *parent,vector<WineryClass> *firstVec) :
 
     for(int i = 0; i<wineryList->size();i++)
     {
-    //    QCheckBox *checkbox = new QCheckBox(QString::fromStdString(wineryList->at(i).getWineryName()),this);
-
         QListWidgetItem* item = new QListWidgetItem(QString::fromStdString(wineryList->at(i).getWineryName()), ui->listWidget);
         item->setFlags(item->flags() | Qt::ItemIsUserCheckable); // set checkable flag
         item->setCheckState(Qt::Unchecked); // AND initialize check state
