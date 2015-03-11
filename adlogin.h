@@ -20,7 +20,6 @@ public:
     ~adlogin();
 
 private slots:
-    //void on_LoginButton_clicked();
 
 private:
     Ui::adlogin *ui;
