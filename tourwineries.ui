@@ -65,7 +65,7 @@ background:#666;
     <string notr="true"/>
    </property>
   </widget>
-  <widget class="QPushButton" name="planShortestTrip">
+  <widget class="QPushButton" name="shopForWine">
    <property name="geometry">
     <rect>
      <x>100</x>
@@ -78,7 +78,7 @@ background:#666;
     <string>Shop for Wine</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="planADayTrip">
+  <widget class="QPushButton" name="visitNextWinery">
    <property name="geometry">
     <rect>
      <x>100</x>
@@ -114,7 +114,7 @@ background:#666;
     </rect>
    </property>
    <property name="text">
-    <string>Winery 1: Adelaida Cellars</string>
+    <string/>
    </property>
   </widget>
  </widget>

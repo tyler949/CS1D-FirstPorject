@@ -67,7 +67,7 @@ void MainWindow::on_tourAndPurchaseWines_clicked()
 {
     // Touring wineries will go through each winery so we will be with 0
     int currentWinery = 0;
-    tourWines = new tourWineries(this,currentWinery);
+    tourWines = new tourWineries(this,currentWinery,wineryList);
     this->hide();
     tourWines->show();
 }

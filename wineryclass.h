@@ -1,5 +1,3 @@
-
-
 #ifndef __CS1D_FirstProject_winery__WineryClass__
 #define __CS1D_FirstProject_winery__WineryClass__
 
