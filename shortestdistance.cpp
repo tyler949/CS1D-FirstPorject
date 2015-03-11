@@ -1,3 +1,4 @@
+
 #include "WineryClass.h"
 void shortestDistance(vector<WineryClass> winvec, int start, int num, vector<WineryClass> &tripvec)
 {
@@ -14,13 +15,11 @@ void shortestDistance(vector<WineryClass> winvec, int start, int num, vector<Win
 		{
 			if(smallest > temp.getDistance(count)  && !(winvec.at(count).getVisted()))
 			{
-				cout << "here" << endl;
 				smallest = temp.getDistance(count);
 				smallestPntr = count;
 			}
 		}
 
-		cout << endl << endl;
 		tripvec.push_back(winvec.at(smallestPntr));
 		winvec.at(smallestPntr).vist();
 		k = smallestPntr;
