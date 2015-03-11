@@ -38,11 +38,6 @@ void planCustomTrip::on_pushButton_clicked()
     // Reset errors
     ui->noWineriesSelected->setText("");
     ui->noWineriesSelected->setStyleSheet("");
-    ui->noMilesToTravel->setText("");
-    ui->noMilesToTravel->setStyleSheet("");
-
-    // Get value of total miles to travel
-    int totalMilesToTravel = ui->spinBox->value();
 
     for(int row = 0; row < ui->listWidget->count(); row++)
     {
@@ -52,22 +47,14 @@ void planCustomTrip::on_pushButton_clicked()
             wineriesToVisit.push_back(row);
 
     }
-    if (wineriesToVisit.empty() || totalMilesToTravel == 0)
+    if (wineriesToVisit.empty())
     {
-        if (wineriesToVisit.empty())
-        {
-            ui->noWineriesSelected->setText("Please select at least one winery to visit");
-            ui->noWineriesSelected->setStyleSheet("background:#ccc;color:#ff0000;padding:5px;");
-        }
-        if (totalMilesToTravel == 0)
-        {
-            ui->noMilesToTravel->setText("Miles to travel should be at least one mile");
-            ui->noMilesToTravel->setStyleSheet("background:#ccc;color:#ff0000;padding:5px;");
-        }
+        ui->noWineriesSelected->setText("Please select at least one winery to visit");
+        ui->noWineriesSelected->setStyleSheet("background:#ccc;color:#ff0000;padding:5px;");
     }
     else
     {
-        tripDisplay = new DisplayTrip(mainMenu,wineryList,0,totalMilesToTravel,&wineriesToVisit);
+        tripDisplay = new DisplayTrip(mainMenu,wineryList,0,0,&wineriesToVisit);
         this->reject();
         tripDisplay->show();
     }

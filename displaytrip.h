@@ -16,7 +16,7 @@ class DisplayTrip : public QDialog
 public:
     explicit DisplayTrip(QWidget *parent = 0,vector<WineryClass> *firstVec = 0,
                          int itemChosen = 0,
-                         int totalAmount = 0, // can be total miles or total to visit
+                         int totalAmount = 0,
                          vector<int> *listOfWineries = 0
                          );
     ~DisplayTrip();

@@ -9,6 +9,7 @@
 #include <QColumnView>
 #include <QVector>
 #include <QComboBox>
+#include <QStandardItemModel>
 
 viewWineriesWindow::viewWineriesWindow(QWidget *parent,vector<WineryClass> *firstVec) :
     QDialog(parent),
@@ -18,18 +19,19 @@ viewWineriesWindow::viewWineriesWindow(QWidget *parent,vector<WineryClass> *firs
     mainMenu   = parent;
     wineryList = firstVec;
 
+    QStandardItemModel *model = new QStandardItemModel(0,1,this);
+    model->setHorizontalHeaderItem(0,new QStandardItem(QString("Winery Name")));
+    model->setHorizontalHeaderItem(1,new QStandardItem(QString("Distance From Canyon Villa")));
+
+
     for(int i=0;i< wineryList->size();i++)
     {
-        QListWidgetItem *Item,*Item2;
-        Item = new QListWidgetItem();
-        Item->setText(QString::fromStdString(wineryList->at(i).getWineryName()));
-
-        Item2 = new QListWidgetItem();
-        Item2->setText(QString::number(wineryList->at(i).getWinesOffered()));
-
-        ui->listWidget->addItem(Item);
-        ui->winesOffered->addItem(Item2);
+        QStandardItem *firstRow  = new QStandardItem(QString::fromStdString(wineryList->at(i).getWineryName()));
+        QStandardItem *secondRow = new QStandardItem(QString::number(wineryList->at(i).getMilesToVilla()));
+        model->setItem(i,0,firstRow);
+        model->setItem(i,1,secondRow);
     }
+    ui->tableView->setModel(model);
 }
 
 viewWineriesWindow::~viewWineriesWindow()

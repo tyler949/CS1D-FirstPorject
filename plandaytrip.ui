@@ -114,7 +114,7 @@ background:#666;
     </rect>
    </property>
    <property name="text">
-    <string>View All Wineries</string>
+    <string>Visit All Wineries</string>
    </property>
   </widget>
   <zorder>columnView</zorder>
