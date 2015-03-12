@@ -5,6 +5,7 @@
 #include "addwine.h"
 #include "newwinery.h"
 #include "changeprice.h"
+//#include "mainwindow.h"
 
 
 namespace Ui {
@@ -34,6 +35,7 @@ private:
     QWidget *login;
     newwinery *winery;
     changeprice *price;
+    //MainWindow mainWin;
 
 
 

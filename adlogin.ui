@@ -13,6 +13,47 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QPushButton,QSpinBox{background-color: #ccc;}
+
+QPushButton:hover
+{
+background: #eee;
+cursor: pointer;
+  
+}
+QDialog
+{
+ background: #333;
+}
+QPushButton {  border: 2px solid #666;border-radius: 5px;z-index:1000;}
+
+QPushButton#viewWineries
+{ 
+height:100px;
+}
+QLabel
+{
+ 
+ color:#fff;
+}
+ 
+#columnView
+{z-index: 0; 
+background:#666;
+} 
+
+#frame,#frame_2,#frame_3
+{
+   background: #666;
+border-bottom: 1px solid #ccc;
+}
+#frame_4,#frame_5,#frame_6
+{
+border-bottom: 1px solid #ccc;
+   background: #999;
+} </string>
+  </property>
   <widget class="QPushButton" name="loginButton">
    <property name="geometry">
     <rect>

@@ -41,5 +41,7 @@ void admenu::on_ChangeWinePriceButton_clicked()
 
 void admenu::on_ReturnToMenuButton_clicked()
 {
-
+//    mainWin = new MainWindow(this);
+//    this->close();
+//    mainWin->show();
 }
