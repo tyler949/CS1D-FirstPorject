@@ -1,7 +1,7 @@
 #include "tourwineries.h"
 #include "ui_tourwineries.h"
 
-tourWineries::tourWineries(QWidget *parent,int current,vector<WineryClass> *firstVec) :
+tourWineries::tourWineries(QWidget *parent,int current,vector<WineryClass> *firstVec, vector<winePurchase> *initialWinePurchase) :
     QDialog(parent),
     ui(new Ui::tourWineries)
 {
@@ -9,7 +9,7 @@ tourWineries::tourWineries(QWidget *parent,int current,vector<WineryClass> *firs
     mainMenu      = parent;
     currentWinery = current;
     wineryList    = firstVec;
-
+    winePurchases = initialWinePurchase;
     this->updateWinery();
 }
 tourWineries::~tourWineries()
@@ -22,6 +22,14 @@ void tourWineries::updateWinery()
 
     // Update Winery Title
     ui->label->setText(QString("Winery %1: "+ QString::fromStdString(wineryList->at(currentWinery).getWineryName())).arg(currentWinery+1));
+
+    // If it's at last winery, then the label will change "View total purchase" otherwise keep going next
+    if (currentWinery == wineryList->size()-1)
+    {
+        ui->visitNextWinery->setText("View Total Purchase");
+    }
+    else
+        ui->visitNextWinery->setText("Visit Next Winery");
 }
 
 void tourWineries::on_pushButton_clicked()
@@ -29,7 +37,6 @@ void tourWineries::on_pushButton_clicked()
     this->reject();
     mainMenu->show();
 }
-
 void tourWineries::on_visitNextWinery_clicked()
 {
     if (currentWinery < wineryList->size()-1)
@@ -38,6 +45,10 @@ void tourWineries::on_visitNextWinery_clicked()
     }
     else
     {
+       totalWineOrder *totalWine = new totalWineOrder(this,wineryList,winePurchases);
+       this->reject();
+       totalWine->show();
+       // (QWidget *parent,vector<wineryClass> *listOfWineries = 0, vector<winePurchase> *purchases = 0)
         currentWinery = 0;
     }
     this->updateWinery();
@@ -45,7 +56,7 @@ void tourWineries::on_visitNextWinery_clicked()
 
 void tourWineries::on_shopForWine_clicked()
 {
-    shopWine = new shopForWine(this,currentWinery,wineryList);
-    this->hide();
+    shopWine = new shopForWine(this,currentWinery,wineryList,winePurchases);
+    this->reject();
     shopWine->show();
 }

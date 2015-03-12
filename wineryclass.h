@@ -31,6 +31,7 @@ public:
     double  getDistance(int x);
     double  getMilesToVilla();
     int     getWinesOffered();
+    vector<wineType>* getWines();
 
     //used for getting a specific wineType nodes data
     string  getWineName(int x);

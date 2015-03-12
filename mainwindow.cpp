@@ -65,9 +65,11 @@ void MainWindow::on_planADayTrip_clicked()
 
 void MainWindow::on_tourAndPurchaseWines_clicked()
 {
+    // Create instant of winery purchases
+    winePurchases = new vector<winePurchase>;
     // Touring wineries will go through each winery so we will be with 0
     int currentWinery = 0;
-    tourWines = new tourWineries(this,currentWinery,wineryList);
+    tourWines = new tourWineries(this,currentWinery,wineryList,winePurchases);
     this->hide();
     tourWines->show();
 }

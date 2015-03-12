@@ -4,6 +4,7 @@
 #include "wineryclass.h"
 #include <QDialog>
 #include "shopforwine.h"
+#include "totalwineorder.h"
 
 namespace Ui {
 class tourWineries;
@@ -14,7 +15,7 @@ class tourWineries : public QDialog
     Q_OBJECT
 
 public:
-    explicit tourWineries(QWidget *parent = 0,int current = 0,vector<WineryClass> *firstVec = 0);
+    explicit tourWineries(QWidget *parent = 0,int current = 0,vector<WineryClass> *firstVec = 0, vector<winePurchase> *purchase = 0);
     ~tourWineries();
 
 private slots:
@@ -30,6 +31,7 @@ private:
     Ui::tourWineries *ui;
     QWidget *mainMenu;
     shopForWine *shopWine;
+    vector<winePurchase> *winePurchases;
     vector<WineryClass> *wineryList;
     int currentWinery;
 };

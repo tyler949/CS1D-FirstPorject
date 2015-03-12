@@ -10,6 +10,7 @@
 #include "adlogin.h"
 #include <QVector>
 
+
 namespace Ui {
 class MainWindow;
 }
@@ -40,6 +41,7 @@ private:
     tourWineries *tourWines;
     adlogin *login;
     vector<WineryClass> *wineryList;
+    vector<winePurchase> *winePurchases;
 };
 
 #endif // MAINWINDOW_H

@@ -1,7 +1,7 @@
 
 
 #include "WineryClass.h"
-
+#include <QDebug>
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 WineryClass::WineryClass()
@@ -183,6 +183,12 @@ void WineryClass::setWineYear(int x, int passedWineYear)
 void WineryClass::setWineCost(int x, double passedWineCost)
 {
     winesVec.at(x).setCost(passedWineCost);
+}
+
+vector<wineType>* WineryClass::getWines()
+{
+    qDebug() << " TEEEEEEEESSSSSSST ******: " << QString::number(winesVec.size());
+    return &winesVec;
 }
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

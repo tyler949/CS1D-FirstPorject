@@ -7,6 +7,7 @@
 #include <QTextStream>
 #include <vector>
 #include <QDebug>
+
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
@@ -14,6 +15,7 @@ int main(int argc, char *argv[])
     vector<WineryClass> firstVec;
     PropagateVector(firstVec);
 
+    firstVec.at(3).getWines();
     MainWindow w(0,&firstVec);
 
     w.show();

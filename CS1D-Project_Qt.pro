@@ -29,7 +29,8 @@ SOURCES += main.cpp\
     addwine.cpp \
     changeprice.cpp \
     adlogin.cpp \
-    purchasewines.cpp
+    purchasewines.cpp \
+    totalwineorder.cpp
 
 HEADERS  += mainwindow.h \
     winerie.h \
@@ -49,7 +50,9 @@ HEADERS  += mainwindow.h \
     addwine.h \
     changeprice.h \
     adlogin.h \
-    purchasewines.h
+    purchasewines.h \
+    winepurchasetemplate.h \
+    totalwineorder.h
 
 FORMS    += mainwindow.ui \
     viewwinerieswindow.ui \
@@ -64,7 +67,8 @@ FORMS    += mainwindow.ui \
     addwine.ui \
     changeprice.ui \
     adlogin.ui \
-    purchasewines.ui
+    purchasewines.ui \
+    totalwineorder.ui
 
 DISTFILES += \
     winerytextfile.txt
