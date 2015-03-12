@@ -21,10 +21,12 @@ public:
 
 private slots:
 
+    void on_loginButton_clicked();
+
 private:
     Ui::adlogin *ui;
     QWidget *mainMenu;
-    //admenu *menu;
+    admenu *menu;
 
 
 

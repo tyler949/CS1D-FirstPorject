@@ -2,7 +2,7 @@
 #define ADDWINE_H
 
 #include <QDialog>
-#include "admenu.h"
+
 
 namespace Ui {
 class addwine;

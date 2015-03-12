@@ -2,9 +2,8 @@
 #define ADMENU_H
 
 #include <QDialog>
-#include "newwinery.h"
 #include "addwine.h"
-#include "changeprice.h"
+
 
 namespace Ui {
 class admenu;
@@ -29,8 +28,10 @@ private slots:
 
 private:
     Ui::admenu *ui;
+    addwine *wines;
     QWidget *login;
-//    addwine *wine;
+
+
 //    changeprice *price;
 
 };

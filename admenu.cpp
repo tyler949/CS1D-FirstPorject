@@ -25,9 +25,9 @@ void admenu::on_AddWineriesButton_clicked()
 
 void admenu::on_AddWineButton_clicked()
 {
-//    wine = new addwine(this);
-//    this->close();
-//    wine->show();
+    wines = new addwine(this);
+    this->close();
+    wines->show();
 }
 
 void admenu::on_ChangeWinePriceButton_clicked()

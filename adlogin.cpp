@@ -12,3 +12,10 @@ adlogin::~adlogin()
 {
     delete ui;
 }
+
+void adlogin::on_loginButton_clicked()
+{
+    menu = new admenu(this);
+    this->close();
+    menu->show();
+}

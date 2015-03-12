@@ -1,6 +1,5 @@
 #include "addwine.h"
 #include "ui_addwine.h"
-#include "admenu.h"
 
 addwine::addwine(QWidget *parent) :
     QDialog(parent),
