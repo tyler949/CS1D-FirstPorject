@@ -20,7 +20,9 @@ admenu::~admenu()
 
 void admenu::on_AddWineriesButton_clicked()
 {
-
+    winery = new newwinery(this);
+    this->close();
+    winery->show();
 }
 
 void admenu::on_AddWineButton_clicked()

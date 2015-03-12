@@ -2,7 +2,7 @@
 #define NEWWINERY_H
 
 #include <QDialog>
-#include "admenu.h"
+//#include "admenu.h"
 
 namespace Ui {
 class newwinery;

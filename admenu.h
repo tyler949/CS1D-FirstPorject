@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include "addwine.h"
+#include "newwinery.h"
 
 
 namespace Ui {
@@ -30,6 +31,8 @@ private:
     Ui::admenu *ui;
     addwine *wines;
     QWidget *login;
+    newwinery *winery;
+
 
 
 //    changeprice *price;

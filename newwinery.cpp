@@ -1,6 +1,6 @@
 #include "newwinery.h"
 #include "ui_newwinery.h"
-#include "admenu.h"
+
 
 newwinery::newwinery(QWidget *parent) :
     QDialog(parent),
