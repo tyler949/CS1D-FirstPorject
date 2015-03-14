@@ -2,6 +2,10 @@
 #define ADDWINE_H
 
 #include <QDialog>
+#include <QVector>
+#include <vector>
+#include "wineryclass.h"
+
 
 
 namespace Ui {
@@ -13,7 +17,7 @@ class addwine : public QDialog
     Q_OBJECT
 
 public:
-    explicit addwine(QWidget *parent = 0);
+    explicit addwine(QWidget *parent = 0,vector<WineryClass> *firstVec = 0);
     ~addwine();
 
 private slots:
@@ -21,6 +25,7 @@ private slots:
 
 private:
     Ui::addwine *ui;
+     vector<WineryClass> *wineryList;
 };
 
 #endif // ADDWINE_H
