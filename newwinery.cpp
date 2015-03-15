@@ -2,11 +2,12 @@
 #include "ui_newwinery.h"
 
 
-newwinery::newwinery(QWidget *parent) :
+newwinery::newwinery(QWidget *parent,vector<WineryClass> *firstVec) :
     QDialog(parent),
     ui(new Ui::newwinery)
 {
     ui->setupUi(this);
+    wineryList = firstVec;
 }
 
 newwinery::~newwinery()

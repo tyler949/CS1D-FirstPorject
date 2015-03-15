@@ -3,6 +3,9 @@
 
 #include <QDialog>
 //#include "admenu.h"
+#include <QVector>
+#include <vector>
+#include "wineryclass.h"
 
 namespace Ui {
 class newwinery;
@@ -13,7 +16,7 @@ class newwinery : public QDialog
     Q_OBJECT
 
 public:
-    explicit newwinery(QWidget *parent = 0);
+    explicit newwinery(QWidget *parent = 0,vector<WineryClass> *firstVec = 0);
     ~newwinery();
 
 private slots:
@@ -21,6 +24,7 @@ private slots:
 
 private:
     Ui::newwinery *ui;
+    vector<WineryClass> *wineryList;
 
 };
 

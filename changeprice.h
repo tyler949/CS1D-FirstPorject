@@ -3,6 +3,9 @@
 
 #include <QDialog>
 //#include "admenu.h"
+#include <QVector>
+#include <vector>
+#include "wineryclass.h"
 
 namespace Ui {
 class changeprice;
@@ -13,7 +16,7 @@ class changeprice : public QDialog
     Q_OBJECT
 
 public:
-    explicit changeprice(QWidget *parent = 0);
+    explicit changeprice(QWidget *parent = 0,vector<WineryClass> *firstVec = 0);
     ~changeprice();
 
 private slots:
@@ -21,6 +24,7 @@ private slots:
 
 private:
     Ui::changeprice *ui;
+    vector<WineryClass> *wineryList;
 ;
 };
 
