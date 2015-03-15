@@ -76,7 +76,7 @@ void MainWindow::on_tourAndPurchaseWines_clicked()
 
 void MainWindow::on_AdminLogin_clicked()
 {
-    login = new adlogin(this);
+    login = new adlogin(this, wineryList);
     this->close();
     login->show();
 }

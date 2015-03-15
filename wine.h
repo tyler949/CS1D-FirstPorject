@@ -1,6 +1,6 @@
 #ifndef WINE_H_
 #define WINE_H_
-#include <string>;
+#include <string>
 using namespace std;
 
 class wineType

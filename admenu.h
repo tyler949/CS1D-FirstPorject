@@ -5,6 +5,10 @@
 #include "addwine.h"
 #include "newwinery.h"
 #include "changeprice.h"
+#include <QVector>
+#include <vector>
+#include "wineryclass.h"
+
 //#include "mainwindow.h"
 
 
@@ -17,7 +21,7 @@ class admenu : public QDialog
     Q_OBJECT
 
 public:
-    explicit admenu(QWidget *parent = 0);
+    explicit admenu(QWidget *parent = 0,vector<WineryClass> *firstVec = 0);
     ~admenu();
 
 private slots:
@@ -35,6 +39,7 @@ private:
     QWidget *login;
     newwinery *winery;
     changeprice *price;
+    vector<WineryClass> *wineryList;
     //MainWindow mainWin;
 
 

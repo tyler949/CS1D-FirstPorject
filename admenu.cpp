@@ -5,12 +5,13 @@
 #include "changeprice.h"
 #include "mainwindow.h"
 
-admenu::admenu(QWidget *parent) :
+admenu::admenu(QWidget *parent,vector<WineryClass> *firstVec) :
     QDialog(parent),
     ui(new Ui::admenu)
 {
     ui->setupUi(this);
     login = parent;
+    wineryList = firstVec;
 }
 
 admenu::~admenu()
@@ -27,7 +28,7 @@ void admenu::on_AddWineriesButton_clicked()
 
 void admenu::on_AddWineButton_clicked()
 {
-    wines = new addwine(this);
+    wines = new addwine(this,wineryList);
     this->close();
     wines->show();
 }
