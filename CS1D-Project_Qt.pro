@@ -32,7 +32,8 @@ SOURCES += main.cpp\
     purchasewines.cpp \
     totalwineorder.cpp \
     paymentinfo.cpp \
-    transactioncomplete.cpp
+    transactioncomplete.cpp \
+    user.cpp
 
 HEADERS  += mainwindow.h \
     winerie.h \

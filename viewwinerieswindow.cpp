@@ -23,7 +23,7 @@ viewWineriesWindow::viewWineriesWindow(QWidget *parent,vector<WineryClass> *firs
     model->setHorizontalHeaderItem(0,new QStandardItem(QString("Winery Name")));
     model->setHorizontalHeaderItem(1,new QStandardItem(QString("Distance From Canyon Villa")));
 
-    for(int i=0;i< wineryList->size();i++)
+    for(int i=0;i< wineryList->size()-1;i++)
     {
         QStandardItem *firstRow  = new QStandardItem(QString::fromStdString(wineryList->at(i).getWineryName()));
         QStandardItem *secondRow = new QStandardItem(QString::number(wineryList->at(i).getMilesToVilla()));

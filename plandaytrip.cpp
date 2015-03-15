@@ -72,13 +72,13 @@ void planDayTrip::on_planADayTrip_2_clicked()
 {
     vector<WineryClass> newWineryVec;
     vector<int> wineriesToVisit;
-    shortestDistance2(*wineryList,0, wineryList->size(), newWineryVec);
+    shortestDistance2(*wineryList,0, wineryList->size() - 2, newWineryVec);
 
     for(int i = 0; i < newWineryVec.size(); i++)
     {
         wineriesToVisit.push_back(newWineryVec.at(i).getWineryNumber()-1);
-        DisplayTrip *tripDisplay = new DisplayTrip(mainMenu,wineryList,0,wineryList->size(),&wineriesToVisit,&newWineryVec);
-        this->reject();
-        tripDisplay->show();
     }
+    DisplayTrip *tripDisplay = new DisplayTrip(mainMenu,wineryList,0,wineryList->size(),&wineriesToVisit,&newWineryVec);
+    this->reject();
+    tripDisplay->show();
 }
