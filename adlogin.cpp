@@ -2,6 +2,7 @@
 #include "ui_adlogin.h"
 #include <vector>
 #include "wineryclass.h"
+#include "mainwindow.h"
 
 adlogin::adlogin(QWidget *parent, vector<WineryClass> *firstVec) :
     QDialog(parent),
@@ -9,6 +10,7 @@ adlogin::adlogin(QWidget *parent, vector<WineryClass> *firstVec) :
 {
     ui->setupUi(this);
     wineryList = firstVec;
+    mainMenu = parent;
 }
 
 adlogin::~adlogin()
@@ -21,4 +23,11 @@ void adlogin::on_loginButton_clicked()
     menu = new admenu(this,wineryList);
     this->close();
     menu->show();
+}
+
+void adlogin::on_mainmenuebutton_clicked()
+{
+
+    this->reject();
+    mainMenu->show();
 }

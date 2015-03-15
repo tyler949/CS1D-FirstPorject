@@ -113,6 +113,19 @@ border-bottom: 1px solid #ccc;
     </rect>
    </property>
   </widget>
+  <widget class="QPushButton" name="mainmenuebutton">
+   <property name="geometry">
+    <rect>
+     <x>274</x>
+     <y>260</y>
+     <width>101</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Back to Main Menu</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

@@ -25,6 +25,7 @@ private slots:
 private:
     Ui::changeprice *ui;
     vector<WineryClass> *wineryList;
+    QWidget *adminMenue;
 ;
 };
 

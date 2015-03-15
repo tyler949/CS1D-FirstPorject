@@ -8,6 +8,7 @@ newwinery::newwinery(QWidget *parent,vector<WineryClass> *firstVec) :
 {
     ui->setupUi(this);
     wineryList = firstVec;
+    adminMenue = parent;
 }
 
 newwinery::~newwinery()
@@ -17,5 +18,6 @@ newwinery::~newwinery()
 
 void newwinery::on_AddWineryButton_clicked()
 {
-
+    this->reject();
+    adminMenue->show();
 }

@@ -26,6 +26,7 @@ private slots:
 private:
     Ui::addwine *ui;
      vector<WineryClass> *wineryList;
+     QWidget *adminMenue;
 };
 
 #endif // ADDWINE_H

@@ -25,6 +25,7 @@ private slots:
 private:
     Ui::newwinery *ui;
     vector<WineryClass> *wineryList;
+    QWidget *adminMenue;
 
 };
 

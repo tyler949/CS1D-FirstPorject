@@ -26,11 +26,14 @@ private slots:
 
     void on_loginButton_clicked();
 
+    void on_mainmenuebutton_clicked();
+
 private:
     Ui::adlogin *ui;
     QWidget *mainMenu;
     admenu *menu;
     vector<WineryClass> *wineryList;
+
 
 
 

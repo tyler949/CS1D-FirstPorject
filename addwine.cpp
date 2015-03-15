@@ -10,6 +10,7 @@ addwine::addwine(QWidget *parent,vector<WineryClass> *firstVec) :
 {
     ui->setupUi(this);
     wineryList = firstVec;
+    adminMenue = parent;
 
     ui->WineryDropDownBox->addItem("Select Winery");
     for(int i=0;i< wineryList->size();i++)
@@ -25,4 +26,6 @@ addwine::~addwine()
 
 void addwine::on_AddWineButton_clicked()
 {
+    this->reject();
+    adminMenue->show();
 }
