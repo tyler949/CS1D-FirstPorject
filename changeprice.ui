@@ -106,11 +106,6 @@ border-bottom: 1px solid #ccc;
      <height>22</height>
     </rect>
    </property>
-   <item>
-    <property name="text">
-     <string>Propagate from Winery Vector</string>
-    </property>
-   </item>
   </widget>
   <widget class="QLabel" name="WineryLabel">
    <property name="geometry">

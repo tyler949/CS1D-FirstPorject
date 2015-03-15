@@ -8,6 +8,11 @@ changeprice::changeprice(QWidget *parent,vector<WineryClass> *firstVec) :
 {
     ui->setupUi(this);
     wineryList = firstVec;
+    ui->WineryComboBox->addItem("Select Winery");
+    for(int i=0;i< wineryList->size();i++)
+    {
+        ui->WineryComboBox->addItem(QString::fromStdString(wineryList->at(i).getWineryName()));
+    }
 }
 
 changeprice::~changeprice()

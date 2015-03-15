@@ -35,7 +35,7 @@ void admenu::on_AddWineButton_clicked()
 
 void admenu::on_ChangeWinePriceButton_clicked()
 {
-    price = new changeprice(this);
+    price = new changeprice(this,wineryList);
     this->close();
     price->show();
 }
