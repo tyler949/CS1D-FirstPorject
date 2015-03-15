@@ -67,7 +67,7 @@ border-bottom: 1px solid #ccc;
     <string>Add Wine</string>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>88</x>
@@ -80,7 +80,7 @@ border-bottom: 1px solid #ccc;
     <item>
      <widget class="QLabel" name="TypeOfWineLabel">
       <property name="text">
-       <string>Type of Wine</string>
+       <string>Name of Wine</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -92,7 +92,7 @@ border-bottom: 1px solid #ccc;
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>79</x>
@@ -117,7 +117,7 @@ border-bottom: 1px solid #ccc;
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>129</x>
@@ -138,17 +138,24 @@ border-bottom: 1px solid #ccc;
      </widget>
     </item>
     <item>
-     <widget class="QLineEdit" name="YearTextBox"/>
+     <widget class="QSpinBox" name="spinBox">
+      <property name="minimum">
+       <number>1800</number>
+      </property>
+      <property name="maximum">
+       <number>2015</number>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
   <widget class="QWidget" name="">
    <property name="geometry">
     <rect>
-     <x>128</x>
-     <y>167</y>
-     <width>164</width>
-     <height>22</height>
+     <x>50</x>
+     <y>160</y>
+     <width>241</width>
+     <height>20</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout_4">
@@ -163,7 +170,28 @@ border-bottom: 1px solid #ccc;
      </widget>
     </item>
     <item>
-     <widget class="QLineEdit" name="PriceTextBox"/>
+     <widget class="QSpinBox" name="spinBox_3">
+      <property name="maximum">
+       <number>20000</number>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string>.</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QSpinBox" name="spinBox_2">
+      <property name="maximum">
+       <number>99</number>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
