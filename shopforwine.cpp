@@ -26,6 +26,16 @@ shopForWine::shopForWine(QWidget *parent,int currentWineryIndex,vector<WineryCla
 
     // Get wines from current winery
     vector<wineType> *wineTypes;
+    wineTypes = wineryList->at(currentWinery).getWines();
+
+    // Each each wine to the table
+    for(int i=0; i < wineTypes->size(); i++)
+    {
+        ui->tableWidget->insertRow(i);
+        QSpinBox *spinBox = new QSpinBox(ui->tableWidget);
+        ui->tableWidget->setCellWidget(i,0,spinBox);
+        ui->tableWidget->setItem(i,1,new QTableWidgetItem(QString::fromStdString(wineTypes->at(i).getName())));
+    }
 }
 shopForWine::~shopForWine()
 {
@@ -34,7 +44,7 @@ shopForWine::~shopForWine()
 
 void shopForWine::on_addWineToOrder_clicked()
 {
-    // Get wines of winery list..
+    // Get wines of winery list
     vector<wineType> *wineTypes;
     wineTypes = wineryList->at(currentWinery).getWines();
 
