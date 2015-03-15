@@ -91,9 +91,6 @@ void planShortestTrip::on_pushButton_clicked()
         {
             wineriesToVisit.push_back(newWineryVec.at(i).getWineryNumber()-1);
         }
-        for(int i= 0; i < newWineryVec.size(); i++)
-
-
         tripDisplay = new DisplayTrip(mainMenu,wineryList,itemChosen,totalWineries,&wineriesToVisit,&newWineryVec);
         this->reject();
         tripDisplay->show();

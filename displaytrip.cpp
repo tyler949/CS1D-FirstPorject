@@ -1,8 +1,9 @@
 #include "displaytrip.h"
 #include "ui_displaytrip.h"
-#include "shopforwine.h"
+#include "tourwineries.h"
 #include <QDebug>
-DisplayTrip::DisplayTrip(QWidget *parent,vector<WineryClass> *firstVec,
+DisplayTrip::DisplayTrip(QWidget *parent,
+                         vector<WineryClass> *firstVec,
                          int itemChosen,
                          int totalWineries,
                          vector<int> *listOfWineries,
@@ -17,7 +18,7 @@ DisplayTrip::DisplayTrip(QWidget *parent,vector<WineryClass> *firstVec,
     totalToVisit = totalWineries;
     wineriesToVisit = listOfWineries;
     totalMiles   = &totalToVisit;
-    newWineryList = theNewWineryList;
+    newWineryList = *theNewWineryList;
 
     int prevWinery = 0;
     double miles = 0;
@@ -60,7 +61,8 @@ void DisplayTrip::on_pushButton_clicked()
 void DisplayTrip::on_shopForWine_clicked()
 {
     vector<winePurchase> *purchases;
-    shopForWine *wineShopping =  new shopForWine(mainMenu,0,newWineryList,purchases);
-    wineShopping->show();
+    tourWineries *tour =  new tourWineries(mainMenu,0,&newWineryList); // fourth field will be default
+
     this->reject();
+    tour->show();
 }

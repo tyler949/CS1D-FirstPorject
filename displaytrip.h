@@ -14,12 +14,12 @@ class DisplayTrip : public QDialog
     Q_OBJECT
 
 public:
-    explicit DisplayTrip(QWidget *parent = 0,vector<WineryClass> *firstVec = 0,
-                         int itemChosen = 0,
-                         int totalAmount = 0,
-                         vector<int> *listOfWineries = 0,
-                         vector<WineryClass> *newWineryList = 0
-                         );
+    explicit DisplayTrip(QWidget *parent = 0,
+                          vector<WineryClass> *firstVec = 0,
+                          int itemChosen = 0,
+                          int totalWineries = 0,
+                          vector<int> *listOfWineries = 0,
+                          vector<WineryClass> *theNewWineryList = 0);
     ~DisplayTrip();
 
 private slots:
@@ -35,7 +35,7 @@ private:
     int totalToVisit;
     int *totalMiles;
     vector<int> *wineriesToVisit;
-    vector<WineryClass> *newWineryList;
+    vector<WineryClass> newWineryList;
 };
 
 #endif // DISPLAYTRIP_H

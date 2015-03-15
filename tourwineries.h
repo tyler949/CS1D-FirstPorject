@@ -33,6 +33,7 @@ private:
     shopForWine *shopWine;
     vector<winePurchase> *winePurchases;
     vector<WineryClass> *wineryList;
+    vector<WineryClass> wineriesToShop;
     int currentWinery;
 };
 

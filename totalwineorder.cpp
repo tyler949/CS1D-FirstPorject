@@ -1,5 +1,8 @@
 #include "totalwineorder.h"
 #include "ui_totalwineorder.h"
+#include "mainwindow.h"
+#include <QDebug>
+#include "paymentinfo.h"
 
 totalWineOrder::totalWineOrder(QWidget *parent,vector<WineryClass> *listOfWineries, vector<winePurchase> *purchases) :
     QDialog(parent),
@@ -46,9 +49,31 @@ totalWineOrder::totalWineOrder(QWidget *parent,vector<WineryClass> *listOfWineri
         ui->tableWidget->setItem(i,5,new QTableWidgetItem(QString("$")+QString::number(totalPrice)));
     }
     ui->totalLabel->setText(QString("$")+QString::number(totalAllCost));
+
+    orderTotal = totalAllCost;
+
+    // If not total, then just show "Back to main menu"
+    if (orderTotal <= 0)
+        ui->pushButton->setText("Back To Main Menu");
 }
 
 totalWineOrder::~totalWineOrder()
 {
     delete ui;
+}
+
+void totalWineOrder::on_pushButton_clicked()
+{
+    if (orderTotal <= 0 )
+    {
+        MainWindow *main = new MainWindow;
+        this->reject();
+        main->show();
+    }
+    else
+    {
+        paymentinfo *payment = new paymentinfo;
+        this->reject();
+        payment->show();
+    }
 }
