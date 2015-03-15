@@ -91,17 +91,11 @@ void planCustomTrip::on_pushButton_clicked()
     {
         updateVector(*wineryList,wineriesToVisit);
 
-        qDebug() << "***********  ";
-        for(int i = 0; i < wineriesToVisit.size(); i++)
-        {
-            qDebug() << QString::number(wineriesToVisit.at(i).getWineryNumber()-1);
-        }
         for(int i = 0; i < wineriesToVisit.size(); i++)
         {
             wineriesPass.push_back(wineriesToVisit.at(i).getWineryNumber()-1);
-            qDebug() << "SELECTED TWO " << wineriesToVisit.at(i).getWineryNumber();
         }
-        tripDisplay = new DisplayTrip(mainMenu,wineryList,0,0,&wineriesPass);
+        tripDisplay = new DisplayTrip(mainMenu,wineryList,0,0,&wineriesPass,&wineriesToVisit);
         this->reject();
         tripDisplay->show();
 
