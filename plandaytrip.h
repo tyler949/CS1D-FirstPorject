@@ -26,6 +26,8 @@ private slots:
     void on_planADayTrip_clicked();
     void on_tourAndPurchaseWines_clicked();
 
+    void on_planADayTrip_2_clicked();
+
 private:
     Ui::planDayTrip *ui;
     planShortestTrip *planShortest;

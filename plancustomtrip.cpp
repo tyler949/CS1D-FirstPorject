@@ -4,6 +4,7 @@
 #include <QStandardItemModel>
 #include <QModelIndex>
 #include <QListWidgetItem>
+#include "mainwindow.h"
 #include <QDebug>
 planCustomTrip::planCustomTrip(QWidget *parent,vector<WineryClass> *firstVec) :
     QDialog(parent),
@@ -27,11 +28,44 @@ planCustomTrip::~planCustomTrip()
 {
     delete ui;
 }
+void updateVector(vector<WineryClass> orginal, vector<WineryClass> &newVec)
+{
+    int key;
+    for(int i = 0; i < newVec.size(); i++)
+    {
+        newVec.at(i).distanceClear();
+    }
+    for(int i = 0; i < newVec.size(); i++)
+    {
+        key = newVec.at(i).getWineryNumber() -1;
+        for(int j = 0; j < newVec.size(); j++)
+        {
 
+            newVec.at(j).addDistance(orginal.at(newVec.at(j).getWineryNumber() - 1).getDistance(key));
+        }
+    }
+    /*for(int i = 0; i < newVec.size(); i ++)
+    {
+        newVec.at(i).setWineryNumber((i + 1));
+    }*/
+    qDebug() << "*********** IN FUNCTION ";
+    for(int i = 0; i < newVec.size(); i++)
+    {
+        qDebug() << QString::number(newVec.at(i).getWineryNumber());
+        qDebug() << "NAMES: " << QString::fromStdString(newVec.at(i).getWineryName());
+    }
+    qDebug() << "************ IN FUNCTION 2";
+    for(int i = 0; i < newVec.size(); i++)
+    {
+        qDebug() << QString::number(newVec.at(i).getWineryNumber());
+        qDebug() << "NAMES: " << QString::fromStdString(orginal.at(newVec.at(i).getWineryNumber()-1).getWineryName());
+    }
+}
 void planCustomTrip::on_pushButton_clicked()
 {
     // Vector for list of wineries to visit
-    vector<int> wineriesToVisit;
+    vector<WineryClass> wineriesToVisit;
+    vector<int> wineriesPass;
 
     // Reset errors
     ui->noWineriesSelected->setText("");
@@ -42,7 +76,10 @@ void planCustomTrip::on_pushButton_clicked()
         // Check if item is checked. If so, add to vector
         // of wineries to visit
         if (ui->listWidget->item(row)->checkState() == Qt::Checked)
-            wineriesToVisit.push_back(row);
+        {
+            wineriesToVisit.push_back(wineryList->at(row));
+            qDebug() << "SELECTED : " << wineryList->at(row).getWineryNumber();
+        }
 
     }
     if (wineriesToVisit.empty())
@@ -52,8 +89,22 @@ void planCustomTrip::on_pushButton_clicked()
     }
     else
     {
-        tripDisplay = new DisplayTrip(mainMenu,wineryList,0,0,&wineriesToVisit);
+        updateVector(*wineryList,wineriesToVisit);
+
+        qDebug() << "***********  ";
+        for(int i = 0; i < wineriesToVisit.size(); i++)
+        {
+            qDebug() << QString::number(wineriesToVisit.at(i).getWineryNumber()-1);
+        }
+        for(int i = 0; i < wineriesToVisit.size(); i++)
+        {
+            wineriesPass.push_back(wineriesToVisit.at(i).getWineryNumber()-1);
+            qDebug() << "SELECTED TWO " << wineriesToVisit.at(i).getWineryNumber();
+        }
+        tripDisplay = new DisplayTrip(mainMenu,wineryList,0,0,&wineriesPass);
         this->reject();
         tripDisplay->show();
+
+
     }
 }

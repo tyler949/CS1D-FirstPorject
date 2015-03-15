@@ -20,24 +20,28 @@ admenu::~admenu()
 
 void admenu::on_AddWineriesButton_clicked()
 {
-
+    winery = new newwinery(this);
+    this->close();
+    winery->show();
 }
 
 void admenu::on_AddWineButton_clicked()
 {
-//    wine = new addwine(this);
-//    this->close();
-//    wine->show();
+    wines = new addwine(this);
+    this->close();
+    wines->show();
 }
 
 void admenu::on_ChangeWinePriceButton_clicked()
 {
-//    price = new changeprice(this);
-//    this->close();
-//    price->show();
+    price = new changeprice(this);
+    this->close();
+    price->show();
 }
 
 void admenu::on_ReturnToMenuButton_clicked()
 {
-
+    MainWindow *main = new MainWindow();
+    this->reject();
+    main->show();
 }

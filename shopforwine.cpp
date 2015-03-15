@@ -26,24 +26,6 @@ shopForWine::shopForWine(QWidget *parent,int currentWineryIndex,vector<WineryCla
 
     // Get wines from current winery
     vector<wineType> *wineTypes;
-    wineTypes = wineryList->at(currentWinery).getWines();
-    /* real one
-    for(int i=0; i < wineTypes->size(); i++)
-    {
-        ui->tableWidget->insertRow(i);
-        QSpinBox *spinBox = new QSpinBox(ui->tableWidget);
-        ui->tableWidget->setCellWidget(i,0,spinBox);
-        ui->tableWidget->setItem(i,1,new QTableWidgetItem(QString::fromStdString(wineTypes->at(i).getName())));
-    }
-    */
-
-    for(int i=0; i < 5; i++)
-    {
-        ui->tableWidget->insertRow(i);
-        QSpinBox *spinBox = new QSpinBox(ui->tableWidget);
-        ui->tableWidget->setCellWidget(i,0,spinBox);
-        ui->tableWidget->setItem(i,1,new QTableWidgetItem("Wine Name here"));
-    }
 }
 shopForWine::~shopForWine()
 {
@@ -52,11 +34,15 @@ shopForWine::~shopForWine()
 
 void shopForWine::on_addWineToOrder_clicked()
 {
+    // Get wines of winery list
+    vector<wineType> *wineTypes;
+    wineTypes = wineryList->at(currentWinery).getWines();
+
     // Quantity of wines
     int quantity;
     QSpinBox *sp;
     // Get each wine value and add it to order if greater than 0
-    for(int i = 0; i < 5; i++)
+    for(int i = 0; i < wineTypes->size(); i++)
     {
         sp = (QSpinBox*)ui->tableWidget->cellWidget(i,0);
         quantity = sp->value();
@@ -73,14 +59,5 @@ void shopForWine::on_addWineToOrder_clicked()
     tour = new tourWineries(mainMenu,currentWinery,wineryList,totalWinePurchases);
     tour->show();
     this->hide();
-
-    for(int i = 0; i < totalWinePurchases->size(); i++)
-    {
-        qDebug() << "----------------------\n";
-        qDebug() << "Wine Type Index: " << QString::number(totalWinePurchases->at(i).wineTypeIndex) << "\n";
-        qDebug() << "Current Winery: " << QString::number(totalWinePurchases->at(i).wineryIndex) << "\n";
-        qDebug() << "Quantity: " << QString::number(totalWinePurchases->at(i).quantity) << "\n";
-        qDebug() << "----------------------\n\n\n";
-    }
 
 }

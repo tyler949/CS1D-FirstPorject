@@ -13,19 +13,47 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>60</x>
-     <y>30</y>
-     <width>46</width>
-     <height>13</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Name</string>
-   </property>
-  </widget>
+  <property name="styleSheet">
+   <string notr="true">QPushButton,QSpinBox{background-color: #ccc;}
+
+QPushButton:hover
+{
+background: #eee;
+cursor: pointer;
+  
+}
+QDialog
+{
+ background: #333;
+}
+QPushButton {  border: 2px solid #666;border-radius: 5px;z-index:1000;}
+
+QPushButton#viewWineries
+{ 
+height:100px;
+}
+QLabel
+{
+ 
+ color:#fff;
+}
+ 
+#columnView
+{z-index: 0; 
+background:#666;
+} 
+
+#frame,#frame_2,#frame_3
+{
+   background: #666;
+border-bottom: 1px solid #ccc;
+}
+#frame_4,#frame_5,#frame_6
+{
+border-bottom: 1px solid #ccc;
+   background: #999;
+} </string>
+  </property>
   <widget class="QLineEdit" name="NameTextBox">
    <property name="geometry">
     <rect>
@@ -47,6 +75,19 @@
    </property>
    <property name="text">
     <string>Add Winery</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="nameLabel">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>30</y>
+     <width>51</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Name</string>
    </property>
   </widget>
  </widget>

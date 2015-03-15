@@ -5,7 +5,6 @@
 #include "wineryclass.h"
 #include <QListWidget>
 #include <QDebug>
-
 planShortestTrip::planShortestTrip(QWidget *parent,vector<WineryClass> *firstVec) :
     QDialog(parent),
     ui(new Ui::planShortestTrip)
@@ -26,9 +25,39 @@ planShortestTrip::~planShortestTrip()
     delete ui;
 }
 
+void shortestDistance(vector<WineryClass> winvec, int start, int num, vector<WineryClass> &tripvec)
+{
+    qDebug() << "START: "<< start << QString::number(winvec.at(start).getWineryNumber());
+    double smallest = 9999;
+    int smallestPntr;
+    int k = start;
+    tripvec.push_back(winvec.at(start));
+    winvec.at(start).vist();
 
+    for(int i = 0; i < num; i++)
+    {
+        WineryClass temp = winvec.at(k);
+        for(int count = 0; count < winvec.size() - 1; count++)
+        {
+            if(smallest > temp.getDistance(count)  && !(winvec.at(count).getVisted()))
+            {
+                smallest = temp.getDistance(count);
+                smallestPntr = count;
+            }
+        }
+
+        tripvec.push_back(winvec.at(smallestPntr));
+        winvec.at(smallestPntr).vist();
+        k = smallestPntr;
+        smallest = 999999;
+    }
+
+}
 void planShortestTrip::on_pushButton_clicked()
 {
+    // Wineries to visit
+    vector<int> wineriesToVisit;
+
     // Reset any error labels, the error may not be needed this time
     ui->missingStartWinery->setText("");
     ui->missingStartWinery->setStyleSheet("");
@@ -55,8 +84,20 @@ void planShortestTrip::on_pushButton_clicked()
     }
     else
     {
-        tripDisplay = new DisplayTrip(mainMenu,wineryList,itemChosen,totalWineries);
+        vector<WineryClass> newWineryVec;
+        shortestDistance(*wineryList,itemChosen, totalWineries-1, newWineryVec);
+
+        for(int i = 0; i < newWineryVec.size(); i++)
+        {
+            wineriesToVisit.push_back(newWineryVec.at(i).getWineryNumber()-1);
+        }
+        for(int i= 0; i < newWineryVec.size(); i++)
+
+
+        tripDisplay = new DisplayTrip(mainMenu,wineryList,itemChosen,totalWineries,&wineriesToVisit,&newWineryVec);
         this->reject();
         tripDisplay->show();
     }
 }
+
+

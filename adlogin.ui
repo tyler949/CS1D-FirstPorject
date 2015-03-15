@@ -1,6 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>adlogin</class>
- <widget name="adlogin" class="QDialog">
+ <widget class="QDialog" name="adlogin">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -12,6 +13,106 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QPushButton,QSpinBox{background-color: #ccc;}
+
+QPushButton:hover
+{
+background: #eee;
+cursor: pointer;
+  
+}
+QDialog
+{
+ background: #333;
+}
+QPushButton {  border: 2px solid #666;border-radius: 5px;z-index:1000;}
+
+QPushButton#viewWineries
+{ 
+height:100px;
+}
+QLabel
+{
+ 
+ color:#fff;
+}
+ 
+#columnView
+{z-index: 0; 
+background:#666;
+} 
+
+#frame,#frame_2,#frame_3
+{
+   background: #666;
+border-bottom: 1px solid #ccc;
+}
+#frame_4,#frame_5,#frame_6
+{
+border-bottom: 1px solid #ccc;
+   background: #999;
+} </string>
+  </property>
+  <widget class="QPushButton" name="loginButton">
+   <property name="geometry">
+    <rect>
+     <x>178</x>
+     <y>185</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Login</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="usernameLabel">
+   <property name="geometry">
+    <rect>
+     <x>98</x>
+     <y>87</y>
+     <width>61</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Username:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="passwordLabel">
+   <property name="geometry">
+    <rect>
+     <x>98</x>
+     <y>125</y>
+     <width>61</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Password:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="usernameBox">
+   <property name="geometry">
+    <rect>
+     <x>168</x>
+     <y>87</y>
+     <width>113</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="passwordBox">
+   <property name="geometry">
+    <rect>
+     <x>168</x>
+     <y>125</y>
+     <width>113</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

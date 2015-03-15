@@ -8,6 +8,8 @@ class wineType
     public: wineType();
             ~wineType();
             string getName();
+            int getYear();
+            double getCost();
             void setName(string str);
             double getCost();
             void setCost(double num);

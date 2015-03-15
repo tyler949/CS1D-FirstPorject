@@ -52,7 +52,8 @@ HEADERS  += mainwindow.h \
     adlogin.h \
     purchasewines.h \
     winepurchasetemplate.h \
-    totalwineorder.h
+    totalwineorder.h \
+    shortestdistance.h
 
 FORMS    += mainwindow.ui \
     viewwinerieswindow.ui \

@@ -17,12 +17,15 @@ public:
     explicit DisplayTrip(QWidget *parent = 0,vector<WineryClass> *firstVec = 0,
                          int itemChosen = 0,
                          int totalAmount = 0,
-                         vector<int> *listOfWineries = 0
+                         vector<int> *listOfWineries = 0,
+                         vector<WineryClass> *newWineryList = 0
                          );
     ~DisplayTrip();
 
 private slots:
     void on_pushButton_clicked();
+
+    void on_shopForWine_clicked();
 
 private:
     Ui::DisplayTrip *ui;
@@ -32,6 +35,7 @@ private:
     int totalToVisit;
     int *totalMiles;
     vector<int> *wineriesToVisit;
+    vector<WineryClass> *newWineryList;
 };
 
 #endif // DISPLAYTRIP_H
