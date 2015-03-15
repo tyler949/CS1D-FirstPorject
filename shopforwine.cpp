@@ -34,7 +34,7 @@ shopForWine::~shopForWine()
 
 void shopForWine::on_addWineToOrder_clicked()
 {
-    // Get wines of winery list
+    // Get wines of winery list..
     vector<wineType> *wineTypes;
     wineTypes = wineryList->at(currentWinery).getWines();
 
