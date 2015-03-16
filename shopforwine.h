@@ -14,7 +14,7 @@ class shopForWine : public QDialog
     Q_OBJECT
 
 public:
-    explicit shopForWine(QWidget *parent = 0,int currentWinery = 0,vector<WineryClass> *wineryVector = 0, vector<winePurchase> *purchases = 0);
+    explicit shopForWine(QWidget *parent = 0,vector<WineryClass> *originalList = 0,int currentWinery = 0,vector<WineryClass> *wineryVector = 0, vector<winePurchase> *purchases = 0);
     ~shopForWine();
 
 private slots:
@@ -26,6 +26,7 @@ private:
     int currentWinery;
     vector<WineryClass> *wineryList;
     vector<winePurchase> *totalWinePurchases;
+    vector<WineryClass> *originalWineryList;
 };
 
 #endif // SHOPFORWINE_H

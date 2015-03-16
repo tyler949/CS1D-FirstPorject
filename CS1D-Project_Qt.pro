@@ -29,7 +29,6 @@ SOURCES += main.cpp\
     addwine.cpp \
     changeprice.cpp \
     adlogin.cpp \
-    purchasewines.cpp \
     totalwineorder.cpp \
     paymentinfo.cpp \
     transactioncomplete.cpp \
@@ -53,7 +52,6 @@ HEADERS  += mainwindow.h \
     addwine.h \
     changeprice.h \
     adlogin.h \
-    purchasewines.h \
     winepurchasetemplate.h \
     totalwineorder.h \
     shortestdistance.h \
@@ -73,7 +71,6 @@ FORMS    += mainwindow.ui \
     addwine.ui \
     changeprice.ui \
     adlogin.ui \
-    purchasewines.ui \
     totalwineorder.ui \
     paymentinfo.ui \
     transactioncomplete.ui

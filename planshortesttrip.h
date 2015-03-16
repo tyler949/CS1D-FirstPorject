@@ -22,6 +22,8 @@ private slots:
 
     void on_pushButton_clicked();
 
+    void on_back_clicked();
+
 private:
     Ui::planShortestTrip *ui;
     QWidget *mainMenu;

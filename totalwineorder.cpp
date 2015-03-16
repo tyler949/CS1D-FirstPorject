@@ -4,14 +4,14 @@
 #include <QDebug>
 #include "paymentinfo.h"
 
-totalWineOrder::totalWineOrder(QWidget *parent,vector<WineryClass> *listOfWineries, vector<winePurchase> *purchases) :
+totalWineOrder::totalWineOrder(QWidget *parent,vector<WineryClass> *originalList,vector<WineryClass> *listOfWineries, vector<winePurchase> *purchases) :
     QDialog(parent),
     ui(new Ui::totalWineOrder)
 {
     // Assign the winery list and wine purchases
     wineryList         = listOfWineries;
     totalWinePurchases = purchases;
-
+    originalWineryList = originalList;
     // Initialize wines vector and wine type index
     vector<wineType> *wineTypes;
     int wineTypeIndex;
@@ -48,7 +48,7 @@ totalWineOrder::totalWineOrder(QWidget *parent,vector<WineryClass> *listOfWineri
 
         ui->tableWidget->setItem(i,5,new QTableWidgetItem(QString("$")+QString::number(totalPrice)));
     }
-    ui->totalLabel->setText(QString("$")+QString::number(totalAllCost));
+    ui->lineEdit->setText(QString("$")+QString::number(totalAllCost));
 
     orderTotal = totalAllCost;
 
@@ -66,7 +66,7 @@ void totalWineOrder::on_pushButton_clicked()
 {
     if (orderTotal <= 0 )
     {
-        MainWindow *main = new MainWindow;
+        MainWindow *main = new MainWindow(0,originalWineryList);
         this->reject();
         main->show();
     }

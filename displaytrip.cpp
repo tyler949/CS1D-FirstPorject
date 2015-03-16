@@ -30,16 +30,33 @@ DisplayTrip::DisplayTrip(QWidget *parent,
             if (prevWinery > 0)
             {
                 miles += wineryList->at(*it).getDistance(prevWinery);
-
-                qDebug() << "FROM WINERY: " << QString::fromStdString(wineryList->at(*it).getWineryName())
-                         << "TO WINERY: " << QString::fromStdString(wineryList->at(prevWinery).getWineryName())
-                         << "IS " << wineryList->at(*it).getDistance(prevWinery);
             }
             QListWidgetItem *Item;
             Item = new QListWidgetItem();
             Item->setText(QString::fromStdString(wineryList->at(*it).getWineryName()));
             ui->listWidget->addItem(Item);
             prevWinery = *it;
+        }
+        // Set total miles
+        ui->label->setStyleSheet("padding: 5px;");
+        ui->label->setText(QString::number(miles)+QString(" miles"));
+    }
+    else
+    {
+        int count = 0;
+        // List each winery
+        for(vector<WineryClass>::iterator it = newWineryList.begin(); it< newWineryList.end(); it++)
+        {
+
+                qDebug() << "First distance to " << prevWinery << " "<< newWineryList.at(count).getDistance(prevWinery);
+                miles += newWineryList.at(count).getDistance(prevWinery);
+
+            QListWidgetItem *Item;
+            Item = new QListWidgetItem();
+            Item->setText(QString::fromStdString(newWineryList.at(count).getWineryName()));
+            ui->listWidget->addItem(Item);
+            count++;
+            prevWinery = count;
         }
         // Set total miles
         ui->label->setStyleSheet("padding: 5px;");
@@ -61,7 +78,7 @@ void DisplayTrip::on_pushButton_clicked()
 void DisplayTrip::on_shopForWine_clicked()
 {
     vector<winePurchase> *purchases;
-    tourWineries *tour =  new tourWineries(mainMenu,0,&newWineryList); // fourth field will be default
+    tourWineries *tour =  new tourWineries(mainMenu,wineryList,0,&newWineryList); // fourth field will be default
 
     this->reject();
     tour->show();

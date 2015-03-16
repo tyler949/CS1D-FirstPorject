@@ -8,7 +8,7 @@
 #include "winetype.h"
 #include "tourwineries.h"
 #include <QDebug>
-shopForWine::shopForWine(QWidget *parent,int currentWineryIndex,vector<WineryClass> *wineryVector, vector<winePurchase> *purchases) :
+shopForWine::shopForWine(QWidget *parent,vector<WineryClass> *originalList,int currentWineryIndex,vector<WineryClass> *wineryVector, vector<winePurchase> *purchases) :
     QDialog(parent),
     ui(new Ui::shopForWine)
 {
@@ -18,6 +18,7 @@ shopForWine::shopForWine(QWidget *parent,int currentWineryIndex,vector<WineryCla
     wineryList         = wineryVector;
     currentWinery      = currentWineryIndex;
     totalWinePurchases = purchases;
+    originalWineryList = originalList;
 
     // Set table columns, header, and remove vertical header
     ui->tableWidget->setColumnCount(2);
@@ -70,7 +71,7 @@ void shopForWine::on_addWineToOrder_clicked()
         }
     }
     tourWineries *tour;
-    tour = new tourWineries(mainMenu,currentWinery,wineryList,totalWinePurchases);
+    tour = new tourWineries(mainMenu,originalWineryList,currentWinery,wineryList,totalWinePurchases);
     this->reject();
     tour->show();
 

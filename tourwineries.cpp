@@ -1,7 +1,7 @@
 #include "tourwineries.h"
 #include "ui_tourwineries.h"
 #include <QDebug>
-tourWineries::tourWineries(QWidget *parent,int current,vector<WineryClass> *firstVec, vector<winePurchase> *initialWinePurchase) :
+tourWineries::tourWineries(QWidget *parent,vector<WineryClass> *originalList,int current,vector<WineryClass> *firstVec, vector<winePurchase> *initialWinePurchase) :
     QDialog(parent),
     ui(new Ui::tourWineries)
 {
@@ -9,6 +9,8 @@ tourWineries::tourWineries(QWidget *parent,int current,vector<WineryClass> *firs
     mainMenu      = parent;
     currentWinery = current;
     wineryList    = firstVec;
+    originalWineryList = originalList;
+
     if (initialWinePurchase == 0)
     {
         qDebug() << "Okay so I'm on 0 ";
@@ -57,7 +59,7 @@ void tourWineries::on_visitNextWinery_clicked()
     }
     else
     {
-       totalWineOrder *totalWine = new totalWineOrder(this,wineryList,winePurchases);
+       totalWineOrder *totalWine = new totalWineOrder(this,originalWineryList,wineryList,winePurchases);
        this->reject();
        totalWine->show();
         currentWinery = 0;
@@ -67,7 +69,7 @@ void tourWineries::on_visitNextWinery_clicked()
 
 void tourWineries::on_shopForWine_clicked()
 {
-    shopWine = new shopForWine(this,currentWinery,&wineriesToShop,winePurchases);
+    shopWine = new shopForWine(this,wineryList,currentWinery,&wineriesToShop,winePurchases);
     this->reject();
     shopWine->show();
 }

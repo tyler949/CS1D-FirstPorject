@@ -15,3 +15,4 @@ bool checkValid(string user, string pass);
 private : string password;
 string username;
 };
+#endif

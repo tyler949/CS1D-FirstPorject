@@ -14,7 +14,7 @@ class totalWineOrder : public QDialog
     Q_OBJECT
 
 public:
-    explicit totalWineOrder(QWidget *parent = 0,vector<WineryClass> *listOfWineries = 0, vector<winePurchase> *purchases = 0);
+    explicit totalWineOrder(QWidget *parent = 0,vector<WineryClass> *originalList = 0,vector<WineryClass> *listOfWineries = 0, vector<winePurchase> *purchases = 0);
     ~totalWineOrder();
 
 private slots:
@@ -24,6 +24,7 @@ private:
     Ui::totalWineOrder *ui;
     vector<WineryClass> *wineryList;
     vector<winePurchase> *totalWinePurchases;
+    vector<WineryClass> *originalWineryList;
     double orderTotal;
 };
 

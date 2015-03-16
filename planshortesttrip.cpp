@@ -5,16 +5,18 @@
 #include "wineryclass.h"
 #include <QListWidget>
 #include <QDebug>
+#include "mainwindow.h"
+#include "plandaytrip.h"
+
 planShortestTrip::planShortestTrip(QWidget *parent,vector<WineryClass> *firstVec) :
     QDialog(parent),
     ui(new Ui::planShortestTrip)
 {
     ui->setupUi(this);
     mainMenu = parent;
-    wineryList = firstVec;
 
-    ui->comboBox->addItem("Select Winery");
-    for(int i=0;i< wineryList->size();i++)
+    wineryList = firstVec;
+    for(int i=0;i< wineryList->size()-1;i++)
     {
         ui->comboBox->addItem(QString::fromStdString(wineryList->at(i).getWineryName()));
     }
@@ -27,7 +29,7 @@ planShortestTrip::~planShortestTrip()
 
 void shortestDistance(vector<WineryClass> winvec, int start, int num, vector<WineryClass> &tripvec)
 {
-    qDebug() << "START: "<< start << QString::number(winvec.at(start).getWineryNumber());
+
     double smallest = 9999;
     int smallestPntr;
     int k = start;
@@ -85,9 +87,9 @@ void planShortestTrip::on_pushButton_clicked()
     else
     {
         vector<WineryClass> newWineryVec;
-        shortestDistance(*wineryList,itemChosen, totalWineries-1, newWineryVec);
+        shortestDistance(*wineryList,itemChosen+1, totalWineries, newWineryVec);
 
-        for(int i = 0; i < newWineryVec.size(); i++)
+        for(int i = 0; i < newWineryVec.size()-1; i++)
         {
             wineriesToVisit.push_back(newWineryVec.at(i).getWineryNumber()-1);
         }
@@ -96,5 +98,10 @@ void planShortestTrip::on_pushButton_clicked()
         tripDisplay->show();
     }
 }
+void planShortestTrip::on_back_clicked()
+{
+    this->reject();
+    planDayTrip *dayTrip = new planDayTrip(mainMenu,wineryList);
+    dayTrip->show();
 
-
+}

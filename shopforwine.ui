@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Shop for Wine</string>
   </property>
   <property name="styleSheet">
    <string notr="true">QPushButton{background-color: #ccc;}

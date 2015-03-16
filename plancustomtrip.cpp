@@ -6,6 +6,8 @@
 #include <QListWidgetItem>
 #include "mainwindow.h"
 #include <QDebug>
+#include "plandaytrip.h"
+
 planCustomTrip::planCustomTrip(QWidget *parent,vector<WineryClass> *firstVec) :
     QDialog(parent),
     ui(new Ui::planCustomTrip)
@@ -16,7 +18,7 @@ planCustomTrip::planCustomTrip(QWidget *parent,vector<WineryClass> *firstVec) :
 
 
 
-    for(int i = 0; i<wineryList->size();i++)
+    for(int i = 0; i<wineryList->size()-1;i++)
     {
         QListWidgetItem* item = new QListWidgetItem(QString::fromStdString(wineryList->at(i).getWineryName()), ui->listWidget);
         item->setFlags(item->flags() | Qt::ItemIsUserCheckable); // set checkable flag
@@ -44,21 +46,18 @@ void updateVector(vector<WineryClass> orginal, vector<WineryClass> &newVec)
             newVec.at(j).addDistance(orginal.at(newVec.at(j).getWineryNumber() - 1).getDistance(key));
         }
     }
-    /*for(int i = 0; i < newVec.size(); i ++)
+    for(int i = 0; i < newVec.size(); i ++)
     {
         newVec.at(i).setWineryNumber((i + 1));
-    }*/
-    qDebug() << "*********** IN FUNCTION ";
+    }
     for(int i = 0; i < newVec.size(); i++)
     {
         qDebug() << QString::number(newVec.at(i).getWineryNumber());
-        qDebug() << "NAMES: " << QString::fromStdString(newVec.at(i).getWineryName());
     }
     qDebug() << "************ IN FUNCTION 2";
     for(int i = 0; i < newVec.size(); i++)
     {
         qDebug() << QString::number(newVec.at(i).getWineryNumber());
-        qDebug() << "NAMES: " << QString::fromStdString(orginal.at(newVec.at(i).getWineryNumber()-1).getWineryName());
     }
 }
 void planCustomTrip::on_pushButton_clicked()
@@ -91,14 +90,22 @@ void planCustomTrip::on_pushButton_clicked()
     {
         updateVector(*wineryList,wineriesToVisit);
 
-        for(int i = 0; i < wineriesToVisit.size(); i++)
+        for(int i = 0; i < wineriesToVisit.size()-1; i++)
         {
-            wineriesPass.push_back(wineriesToVisit.at(i).getWineryNumber()-1);
+            qDebug() << QString::fromStdString(wineriesToVisit.at(i).getWineryName());
         }
-        tripDisplay = new DisplayTrip(mainMenu,wineryList,0,0,&wineriesPass,&wineriesToVisit);
+        tripDisplay = new DisplayTrip(mainMenu,wineryList,0,0,0,&wineriesToVisit);
         this->reject();
         tripDisplay->show();
 
 
     }
+}
+
+void planCustomTrip::on_back_clicked()
+{
+    this->reject();
+    planDayTrip *dayTrip = new planDayTrip(mainMenu,wineryList);
+    dayTrip->show();
+
 }

@@ -102,7 +102,7 @@ void MainWindow::on_tourAndPurchaseWines_clicked()
     winePurchases = new vector<winePurchase>;
     // Touring wineries will go through each winery so we will be with 0
     int currentWinery = 0;
-    tourWines = new tourWineries(this,currentWinery,wineryList,winePurchases);
+    tourWines = new tourWineries(this,wineryList,currentWinery,wineryList,winePurchases);
     this->hide();
     tourWines->show();
 }
