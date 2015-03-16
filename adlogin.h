@@ -7,6 +7,8 @@
 #include <QVector>
 #include <vector>
 #include "wineryclass.h"
+#include "user.h"
+#include <QString>
 
 
 
@@ -33,6 +35,10 @@ private:
     QWidget *mainMenu;
     admenu *menu;
     vector<WineryClass> *wineryList;
+    user admin;
+    string username;
+    string password;
+
 
 
 

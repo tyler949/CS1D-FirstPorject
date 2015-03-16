@@ -1,8 +1,8 @@
 #include "user.h"
 user:: user()
 {
-username = "";
-password = "";
+username = "Jerry";
+password = "Rocks";
 }
 user::user(string user, string pass)
 {

@@ -1,6 +1,7 @@
 #ifndef USER_H_
 #define USER_H_
 #include <string>
+#include <QString>
 using namespace std;
 class user
 {
