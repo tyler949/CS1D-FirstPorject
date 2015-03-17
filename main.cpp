@@ -10,16 +10,16 @@
 
 int main(int argc, char *argv[])
 {
+    // Start application
     QApplication a(argc, argv);
 
+    // Initialize & Propogate the vector
     vector<WineryClass> firstVec;
     PropagateVector(firstVec);
 
-    firstVec.at(3).getWines();
+    // Open the main window and let's get started
     MainWindow w(0,&firstVec);
-
     w.show();
-
 
 
     return a.exec();

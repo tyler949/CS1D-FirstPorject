@@ -12,8 +12,9 @@ shopForWine::shopForWine(QWidget *parent,vector<WineryClass> *originalList,int c
     QDialog(parent),
     ui(new Ui::shopForWine)
 {
-    qDebug() << "SIZE SHOP: " << wineryVector->size();
     ui->setupUi(this);
+    // Set winery list, current winery,
+    // total wine purchases and original winery list
     mainMenu           = parent;
     wineryList         = wineryVector;
     currentWinery      = currentWineryIndex;
@@ -46,21 +47,19 @@ shopForWine::~shopForWine()
 
 void shopForWine::on_addWineToOrder_clicked()
 {
-    qDebug() << "ENTERED";
     // Get wines of winery list
     vector<wineType> *wineTypes;
     wineTypes = wineryList->at(currentWinery).getWines();
-    qDebug() << "NUMBER OF WINE TYPES: " << wineTypes->size();
-    qDebug() << "WINE NAME: " << QString::fromStdString(wineTypes->at(0).getName());
     // Quantity of wines
     int quantity;
     QSpinBox *sp;
-    qDebug() << "TOTAL : " << totalWinePurchases->size();
     // Get each wine value and add it to order if greater than 0
     for(int i = 0; i < wineTypes->size(); i++)
     {
         sp = (QSpinBox*)ui->tableWidget->cellWidget(i,0);
         quantity = sp->value();
+        // If quantity is more than one then add this as a purchase
+        // by adding the quantity, current winery, etc.
         if (quantity > 0)
         {
             winePurchase winePur;
@@ -70,6 +69,8 @@ void shopForWine::on_addWineToOrder_clicked()
             totalWinePurchases->push_back(winePur);
         }
     }
+
+    // Show tour wineries
     tourWineries *tour;
     tour = new tourWineries(mainMenu,originalWineryList,currentWinery,wineryList,totalWinePurchases);
     this->reject();

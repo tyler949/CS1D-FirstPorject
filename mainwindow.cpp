@@ -16,19 +16,9 @@ MainWindow::MainWindow(QWidget *parent,vector<WineryClass> *firstVec) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
-    QTextStream out(stdout);
     ui->setupUi(this);
+    // Get winery list from main window
     wineryList = firstVec;
-    /*for (int i = 0; i < wineryList->size(); i++)
-    {
-
-        out << QString("Some text");
-        out << QString("*********************");
-        out << QString("test ");
-        QString test = QString::fromStdString(wineryList->at(i).getWineryName());
-        out <<  QString(test);
-        out << endl;
-    }*/
 }
 
 MainWindow::~MainWindow()
@@ -37,11 +27,14 @@ MainWindow::~MainWindow()
 }
 void WriteToFile(vector<WineryClass>& wineryVector)
 {
-    cout << "\nEntering WriteToFile function.";
+    // On exit, write to file
     ofstream outFile;
     outFile.open("WineryTextFile.txt"); // need to put full extension for QT
     outFile << fixed << setprecision(1);
 
+    // For each and every winery, get the winery name, number, and all the wines
+    // And then set the distance of each winery to the other. Same format that is
+    // on winerylist.txt
     for (int i = 0; i < wineryVector.size() - 1; i++)
     {
         outFile << "name of winery: " << wineryVector[i].getWineryName() << endl;
@@ -55,6 +48,7 @@ void WriteToFile(vector<WineryClass>& wineryVector)
         outFile << wineryVector[i].getMilesToVilla() << " miles to Canyon Villa\n";
         outFile << fixed << setprecision(0);
         outFile << wineryVector[i].getWinesOffered() << " wines offered\n";
+        // Get wines offered from the wines vector of the winery list vector
         for (int j = 0; j < wineryVector[i].getWinesOffered(); j++)
         {
             outFile << wineryVector[i].getWineName(j) << endl;
@@ -64,17 +58,22 @@ void WriteToFile(vector<WineryClass>& wineryVector)
         }
         outFile << endl;
     }
+    // Done with file
     outFile.close();
 }
 void MainWindow::on_quit_clicked()
 {
+    // If user wants clicks on "Quit" it will give a confirmation message
     QMessageBox msgBox;
+    // Options given are "Yes" to quit and "no" to stay.
     msgBox.setStandardButtons(QMessageBox::Yes| QMessageBox::No);
     msgBox.setText("Are you sure you want to quit?");
+    // Stylize the confirmation box
     msgBox.setStyleSheet("QMessageBox{background:#333;}QLabel{color: #fff;};"
                          "QPushButton{background:#eee;}");
     msgBox.setWindowTitle("Quit");
 
+    // If yes, it will write to file then quit
     if (msgBox.exec() == QMessageBox::Yes)
     {
         WriteToFile(*wineryList);
@@ -84,6 +83,7 @@ void MainWindow::on_quit_clicked()
 
 void MainWindow::on_viewWineries_clicked()
 {
+    // View wineries once clicked and close this screen
     viewWineries = new viewWineriesWindow(this,wineryList);
     this->close();
     viewWineries->exec();
@@ -91,6 +91,7 @@ void MainWindow::on_viewWineries_clicked()
 
 void MainWindow::on_planADayTrip_clicked()
 {
+    // View plan day trip screen once clicked and close this screen
     dayTrip = new planDayTrip(this,wineryList);
     this->close();
     dayTrip->exec();
@@ -109,6 +110,7 @@ void MainWindow::on_tourAndPurchaseWines_clicked()
 
 void MainWindow::on_AdminLogin_clicked()
 {
+    // View  login once clicked and close this screen
     login = new adlogin(this, wineryList);
     this->close();
     login->show();

@@ -37,8 +37,13 @@ totalWineOrder::totalWineOrder(QWidget *parent,vector<WineryClass> *originalList
         wineTypeIndex = totalWinePurchases->at(i).wineTypeIndex;
         wineryIndex = totalWinePurchases->at(i).wineryIndex;
         totalPrice  = wineTypes->at(wineTypeIndex).getCost() * totalWinePurchases->at(i).quantity;
+        // Get total cost
         totalAllCost+= totalPrice;
 
+        // Insert each winery in the table
+        // table consts of:
+        // Quantity---Winery name----Wine name----Wine Year---Cost
+        // All of this is taken from the winePurchase struct and is in a vector
         ui->tableWidget->insertRow(i);
         ui->tableWidget->setItem(i,0,new QTableWidgetItem(QString::number(totalWinePurchases->at(i).quantity)));
         ui->tableWidget->setItem(i,1,new QTableWidgetItem(QString::fromStdString(wineryList->at(wineryIndex).getWineryName())));
@@ -66,12 +71,14 @@ void totalWineOrder::on_pushButton_clicked()
 {
     if (orderTotal <= 0 )
     {
+        // If there is no total then just go back to menu
         MainWindow *main = new MainWindow(0,originalWineryList);
         this->reject();
         main->show();
     }
     else
     {
+        // If there is total then pay up! Go to pay screen
         paymentinfo *payment = new paymentinfo;
         this->reject();
         payment->show();

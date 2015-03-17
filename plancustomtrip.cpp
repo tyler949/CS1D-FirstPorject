@@ -14,10 +14,13 @@ planCustomTrip::planCustomTrip(QWidget *parent,vector<WineryClass> *firstVec) :
 {
     ui->setupUi(this);
     mainMenu = parent;
+    // Assign winery list vector
     wineryList = firstVec;
 
+    // Go through each winery and put them in a list with a checkbox next to it
     for(int i = 0; i<wineryList->size()-1;i++)
     {
+        // Get item from winery list vector
         QListWidgetItem* item = new QListWidgetItem(QString::fromStdString(wineryList->at(i).getWineryName()), ui->listWidget);
         item->setFlags(item->flags() | Qt::ItemIsUserCheckable); // set checkable flag
         item->setCheckState(Qt::Unchecked); // AND initialize check state
@@ -28,14 +31,21 @@ planCustomTrip::~planCustomTrip()
 {
     delete ui;
 }
+// This function will update the vector. It will allow you to pass original list
+// and an empty list. It will then re-arrange the order of the list into the new vector
+// and set the distances between one-another
 void updateVector(vector<WineryClass> orginal, vector<WineryClass> &newVec)
 {
 
+    // Initialize key for winery number
     int key;
+    // Clear distance of each winery
     for(int i = 0; i < newVec.size(); i++)
     {
         newVec.at(i).distanceClear();
     }
+    // Get winery number for each and then add the distance relative to the other wineries
+    // on thie list
     for(int i = 0; i < newVec.size(); i++)
     {
         key = newVec.at(i).getWineryNumber() -1;
@@ -45,13 +55,10 @@ void updateVector(vector<WineryClass> orginal, vector<WineryClass> &newVec)
             newVec.at(j).addDistance(orginal.at(newVec.at(j).getWineryNumber() - 1).getDistance(key));
         }
     }
+    // Set the winery number for each winery
     for(int i = 0; i < newVec.size(); i ++)
     {
         newVec.at(i).setWineryNumber((i + 1));
-    }
-    for(int i = 0; i < newVec.size(); i++)
-    {
-        qDebug() << QString::number(newVec.at(i).getWineryNumber());
     }
 }
 void planCustomTrip::on_pushButton_clicked()
@@ -71,10 +78,12 @@ void planCustomTrip::on_pushButton_clicked()
         if (ui->listWidget->item(row)->checkState() == Qt::Checked)
         {
             wineriesToVisit.push_back(wineryList->at(row));
-            qDebug() << "SELECTED : " << wineryList->at(row).getWineryNumber();
         }
 
     }
+    // Now we are error checking...
+
+    // If no winery to visit is checked, then it will not allow to proceed
     if (wineriesToVisit.empty())
     {
         ui->noWineriesSelected->setText("Please select at least one winery to visit");
@@ -82,12 +91,10 @@ void planCustomTrip::on_pushButton_clicked()
     }
     else
     {
+        // Update vector to get the new order
         updateVector(*wineryList,wineriesToVisit);
 
-        for(int i = 0; i < wineriesToVisit.size()-1; i++)
-        {
-            qDebug() << QString::fromStdString(wineriesToVisit.at(i).getWineryName());
-        }
+        // Show display trip and close this dialog
         tripDisplay = new DisplayTrip(mainMenu,wineryList,0,0,0,&wineriesToVisit);
         this->reject();
         tripDisplay->show();
@@ -98,6 +105,7 @@ void planCustomTrip::on_pushButton_clicked()
 
 void planCustomTrip::on_back_clicked()
 {
+    // If back clicked, go back to plan day trip
     this->reject();
     planDayTrip *dayTrip = new planDayTrip(mainMenu,wineryList);
     dayTrip->show();
