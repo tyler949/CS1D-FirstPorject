@@ -56,7 +56,8 @@ HEADERS  += mainwindow.h \
     totalwineorder.h \
     shortestdistance.h \
     paymentinfo.h \
-    transactioncomplete.h
+    transactioncomplete.h \
+    user.h
 
 FORMS    += mainwindow.ui \
     viewwinerieswindow.ui \

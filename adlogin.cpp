@@ -11,6 +11,7 @@ adlogin::adlogin(QWidget *parent, vector<WineryClass> *firstVec) :
     ui->setupUi(this);
     wineryList = firstVec;
     mainMenu = parent;
+
 }
 
 adlogin::~adlogin()
@@ -20,9 +21,16 @@ adlogin::~adlogin()
 
 void adlogin::on_loginButton_clicked()
 {
-    menu = new admenu(this,wineryList);
-    this->close();
-    menu->show();
+    username = ui->usernameBox->text().toStdString();
+    password = ui->passwordBox->text().toStdString();
+
+    if(admin.checkValid(username,password))
+    {
+        menu = new admenu(this,wineryList);
+        this->close();
+        menu->show();
+    }
+
 }
 
 void adlogin::on_mainmenuebutton_clicked()
