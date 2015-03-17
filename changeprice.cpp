@@ -9,7 +9,6 @@ changeprice::changeprice(QWidget *parent,vector<WineryClass> *firstVec) :
     ui->setupUi(this);
     wineryList = firstVec;
     adminMenue = parent;
-    ui->WineryComboBox->addItem("Select Winery");
 
     //display wine names
     for(int i=0;i< wineryList->size();i++)
@@ -42,6 +41,7 @@ changeprice::~changeprice()
 
 void changeprice::on_ConfirmChangeButton_clicked()
 {
+    wineryList->at(ui->WineryComboBox->currentIndex()).getWines()->at(ui->TypeOfWineComboBox->currentIndex()).setCost(ui->doubleSpinBox->value());
     this->reject();
     adminMenue->show();
 }
@@ -63,10 +63,11 @@ void changeprice::on_TypeOfWineComboBox_currentIndexChanged(int index)
 }
 void changeprice::on_WineryComboBox_currentIndexChanged(const QString &arg1)
 {
-//        for(int j = 0; j < wineryList->at(ui->TypeOfWineComboBox->currentIndex()).getWinesOffered(); j++)
-//        {
-//            ui->TypeOfWineComboBox->addItem(QString::fromStdString(wineryList->at(ui->WineryComboBox->currentIndex()).getWineName(j)));
-//        }
+    ui->TypeOfWineComboBox->clear();
+        for(int j = 0; j < wineryList->at(ui->WineryComboBox->currentIndex()).getWinesOffered(); j++)
+        {
+            ui->TypeOfWineComboBox->addItem(QString::fromStdString(wineryList->at(ui->WineryComboBox->currentIndex()).getWineName(j)));
+        }
 }
 
 void changeprice::on_WineryComboBox_currentIndexChanged(int index)

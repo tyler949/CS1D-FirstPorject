@@ -149,7 +149,7 @@ border-bottom: 1px solid #ccc;
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>50</x>
@@ -170,26 +170,12 @@ border-bottom: 1px solid #ccc;
      </widget>
     </item>
     <item>
-     <widget class="QSpinBox" name="spinBox_3">
+     <widget class="QDoubleSpinBox" name="doubleSpinBox">
       <property name="maximum">
-       <number>20000</number>
+       <double>20000.000000000000000</double>
       </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="label">
-      <property name="text">
-       <string>.</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QSpinBox" name="spinBox_2">
-      <property name="maximum">
-       <number>99</number>
+      <property name="singleStep">
+       <double>0.010000000000000</double>
       </property>
      </widget>
     </item>
