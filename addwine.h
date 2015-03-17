@@ -5,6 +5,7 @@
 #include <QVector>
 #include <vector>
 #include "wineryclass.h"
+#include "winetype.h"
 
 
 
@@ -27,6 +28,8 @@ private:
     Ui::addwine *ui;
      vector<WineryClass> *wineryList;
      QWidget *adminMenue;
+     wineType tempWine;
+
 };
 
 #endif // ADDWINE_H

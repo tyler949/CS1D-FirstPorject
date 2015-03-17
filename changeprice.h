@@ -30,6 +30,8 @@ private slots:
 
     void on_WineryComboBox_currentIndexChanged(const QString &arg1);
 
+    void on_WineryComboBox_currentIndexChanged(int index);
+
 private:
     Ui::changeprice *ui;
     vector<WineryClass> *wineryList;

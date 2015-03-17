@@ -3,8 +3,8 @@
 //---------------------------------------------------------------
 user:: user()
 {
-    username = "hello";
-    password = "hello";
+    username = "";
+    password = "";
 }
 //---------------------------------------------------------------
 user::user(string user, string pass)
