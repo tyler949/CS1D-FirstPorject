@@ -73,6 +73,7 @@ void shopForWine::on_addWineToOrder_clicked()
     // Show tour wineries
     tourWineries *tour;
     tour = new tourWineries(mainMenu,originalWineryList,currentWinery,wineryList,totalWinePurchases);
+    qDebug() << "current winery in shopforwine.cpp " << currentWinery;
     this->reject();
     tour->show();
 

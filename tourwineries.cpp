@@ -11,6 +11,9 @@ tourWineries::tourWineries(QWidget *parent,vector<WineryClass> *originalList,int
     wineryList    = firstVec;
     originalWineryList = originalList;
 
+
+    qDebug() << "size? " << originalWineryList->size();
+    qDebug() << "current winery in tourwineries.cpp " << currentWinery;
     if (initialWinePurchase == 0)
     {
         winePurchases = new vector<winePurchase>;
@@ -56,6 +59,7 @@ void tourWineries::on_visitNextWinery_clicked()
     // purchases if you are done with the list
 
     // Fix the vector list bug
+    qDebug() << wineryList->size();
     int subtractBy = 1;
     if (originalWineryList->size() == wineryList->size())
     {
@@ -80,7 +84,7 @@ void tourWineries::on_visitNextWinery_clicked()
 
 void tourWineries::on_shopForWine_clicked()
 {
-    shopWine = new shopForWine(this,wineryList,currentWinery,&wineriesToShop,winePurchases);
+    shopWine = new shopForWine(this,originalWineryList,currentWinery,&wineriesToShop,winePurchases);
     this->reject();
     shopWine->show();
 }
