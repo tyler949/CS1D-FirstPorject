@@ -7,6 +7,7 @@
 #include <vector>
 #include "wineryclass.h"
 #include "winetype.h"
+#include "QString"
 
 namespace Ui {
 class newwinery;

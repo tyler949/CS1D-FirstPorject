@@ -1,5 +1,6 @@
 #include "newwinery.h"
 #include "ui_newwinery.h"
+#include <string.h>
 
 
 newwinery::newwinery(QWidget *parent, vector<WineryClass> *firstVec) :
@@ -10,6 +11,7 @@ newwinery::newwinery(QWidget *parent, vector<WineryClass> *firstVec) :
     wineryList = firstVec;
     adminMenue = parent;
     count=0;
+    ui->doubleSpinBox->close();
 }
 
 newwinery::~newwinery()
@@ -19,36 +21,39 @@ newwinery::~newwinery()
 
 void newwinery::on_AddWineryButton_clicked()
 {
-    //string str = wineryList->at(count+1).getWineryName();
-    QString qstr = "hello";
 
-    if(count < 5)
+
+    tempWinery.setWineryName(ui->NameTextBox->text().toStdString());
+
+    this->updateWindow();
+
+    if(count== wineryList->size())
     {
-
-        ui->nameLabel->setText(QString::fromStdString(wineryList->at(5).getWineryName()));
-        count++;
+        this->reject();
+        adminMenue->show();
     }
-    else
-    {
-    this->reject();
-    adminMenue->show();
-    }
-
 
 }
 
 void newwinery::updateWindow()
 {
+
+    ui->doubleSpinBox->clear();
     // This class will be run whenever the winery has changed
 
     // Update Winery Title
-    ui->nameLabel->setText(QString("Winery %1: "+ QString::fromStdString(wineryList->at(count).getWineryName())).arg(count+1));
+    ui->nameLabel->setText(QString("Distance to "+ QString::fromStdString(wineryList->at(count).getWineryName())));
+    count++;
+
+    ui->NameTextBox->close();
+    ui->doubleSpinBox->show();
+
 
     // If it's at last winery, then the label will change "View total purchase" otherwise keep going next
-    if (count == wineryList->size()-1)
-    {
-        ui->AddWineryButton->setText("Finish");
-    }
-    else
-        ui->AddWineryButton->setText("Next Winery");
+//    if (count == wineryList->size()-1)
+//    {
+//        ui->AddWineryButton->setText("Finish");
+//    }
+//    else
+//        ui->AddWineryButton->setText("Next Winery");
 }
