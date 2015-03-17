@@ -16,8 +16,6 @@ planCustomTrip::planCustomTrip(QWidget *parent,vector<WineryClass> *firstVec) :
     mainMenu = parent;
     wineryList = firstVec;
 
-
-
     for(int i = 0; i<wineryList->size()-1;i++)
     {
         QListWidgetItem* item = new QListWidgetItem(QString::fromStdString(wineryList->at(i).getWineryName()), ui->listWidget);
@@ -32,6 +30,7 @@ planCustomTrip::~planCustomTrip()
 }
 void updateVector(vector<WineryClass> orginal, vector<WineryClass> &newVec)
 {
+
     int key;
     for(int i = 0; i < newVec.size(); i++)
     {
@@ -50,11 +49,6 @@ void updateVector(vector<WineryClass> orginal, vector<WineryClass> &newVec)
     {
         newVec.at(i).setWineryNumber((i + 1));
     }
-    for(int i = 0; i < newVec.size(); i++)
-    {
-        qDebug() << QString::number(newVec.at(i).getWineryNumber());
-    }
-    qDebug() << "************ IN FUNCTION 2";
     for(int i = 0; i < newVec.size(); i++)
     {
         qDebug() << QString::number(newVec.at(i).getWineryNumber());
