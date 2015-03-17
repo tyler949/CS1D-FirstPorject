@@ -14,7 +14,7 @@
    <string>Main Menu</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QPushButton{background-color: #ccc;}
+   <string notr="true">QMainWindow QPushButton{background-color: #ccc;}
 
 QMainWindow QPushButton:hover
 {
@@ -22,7 +22,7 @@ background: #eee;
 cursor: pointer;
   
 }
-QMainWindow
+QMainWindow 
 {
 background: #333;
 }
@@ -32,13 +32,12 @@ MainWindow  QPushButton#viewWineries
 { 
 height:100px;
 }
-          
-QMainWindow #label
+ #label5
 {
-  font-family:verdana;
-   background:#eee; 
+  font-family:verdana; 
   padding:10px;
 display: block; 
+color:#fff;
   border: 2px solid #666;border-radius: 5px;}
 
 
@@ -53,7 +52,7 @@ background:#666;
 }  </string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="label5">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -61,6 +60,22 @@ background:#666;
       <width>381</width>
       <height>41</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QMainWindow #label
+{
+  font-family:verdana;
+   
+  padding:10px;
+display: block; 
+  border: 2px solid #666;border-radius: 5px;}
+
+
+QMainWindow #label_2
+{
+background:#000;
+padding:10px;
+}</string>
     </property>
     <property name="text">
      <string>  &lt;b&gt;Welcome&lt;/b&gt; to Straight Ahead Wine Tours of the Central Coast</string>
@@ -145,7 +160,7 @@ background:#666;
     </property>
    </widget>
    <zorder>columnView</zorder>
-   <zorder>label</zorder>
+   <zorder>label5</zorder>
    <zorder>viewWineries</zorder>
    <zorder>planADayTrip</zorder>
    <zorder>tourAndPurchaseWines</zorder>
