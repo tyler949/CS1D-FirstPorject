@@ -26,6 +26,7 @@ private slots:
     void on_AddWineryButton_clicked();
     void updateWindow();
 
+
 private:
     Ui::newwinery *ui;
     vector<WineryClass> *wineryList;

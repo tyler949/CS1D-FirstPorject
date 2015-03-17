@@ -1,5 +1,5 @@
 #include "user.h"
-
+#include <QDebug>
 //---------------------------------------------------------------
 user:: user()
 {
@@ -73,8 +73,7 @@ void user::adminAddWinery(vector<WineryClass> &passedFirstVec,
         {
             passedFirstVec.at(i).addDistance(passedTempWinery.getDistance(i));
         }
-
-        passedFirstVec.push_back(tempWinery);
+        passedFirstVec.push_back(passedTempWinery);
     }
 }
 //---------------------------------------------------------------
