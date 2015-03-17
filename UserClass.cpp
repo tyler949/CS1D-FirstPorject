@@ -55,63 +55,51 @@ bool UserClass:: checkValid(string user, string pass)
     return temp;
 }
 //---------------------------------------------------------------
-//passedWineVec should be a vector from QT if how many wines they wanted
-//to add to the new winery
-void UserClass::adminAddWinery(vector<WineryClass>& passedFirstVec,
-                               string passedName, int passedWineryNumber,
-                               int passedNumberOfWinerys,
-                               double passedMilesToVilla,
-                               int passedWinesOffered,
-                               vector<wineType> passedWineVec)
+//parameters are the mainVector,
+//and a tempWinery that QT needs to create with data recieved
+//from admin in window
+void UserClass::adminAddWinery(vector<WineryClass> &passedFirstVec,
+                               WineryClass passedTempWinery)
 {
-    double tempDistance;
     int sizeOfDistVec;
     WineryClass tempWinery;
-    wineType tempWine;
     
+    //sizeOfDistanceVec should be == 10 on the first run
     sizeOfDistVec = passedFirstVec.at(0).getSizeOfDistanceVec();
     
     if (isAdmin)
     {
-        tempWinery.setWineryName(passedName);
-        tempWinery.setWineryNumber(passedWineryNumber);
-        tempWinery.setNumberOfWinerys(passedNumberOfWinerys);
-        tempWinery.setMilesToVilla(passedMilesToVilla);
-        tempWinery.setWinesOffered(passedWinesOffered);
-        
-        //this adds random distances from itself to the other wineries
         for (int i = 0; i < sizeOfDistVec; i++)
         {
-            tempDistance = ((double) rand() / (double) rand());
-            tempWinery.addDistance(tempDistance);
-            passedFirstVec.at(i).addDistance(tempDistance);
-        }
-        //to add the distance last to itself
-        tempWinery.addDistance(0.0);
-        
-        //this is taking the passed wine vector from QT that the admin
-        //created and adding it to tempWine. it is then added to
-        //tempWinery
-        for (int i = 0; i < passedWinesOffered; i++)
-        {
-            tempWine.setYear(passedWineVec.at(i).getYear());
-            tempWine.setCost(passedWineVec.at(i).getCost());
-            tempWine.setName(passedWineVec.at(i).getName());
-            tempWinery.addWine(tempWine);
+            passedFirstVec.at(i).addDistance(passedTempWinery.getDistance(i));
         }
         
         passedFirstVec.push_back(tempWinery);
     }
 }
 //---------------------------------------------------------------
-//this needs QT to take which winery to add a wine to and create a wineType
-//node and add whats the wines name, whats the wines year, and whats
-//the wines cost. then pass it to this function
+//parameters are the mainVector,
+//an int value (x) to represent which winery,
+//and a tempWine that QT needs to create with data recieved
+//from admin in window
 void UserClass::adminAddWine(vector<WineryClass>& passedFirstVec, int x,
-                             wineType passedWine)
+                             wineType passedTempWine)
 {
     if (isAdmin)
     {
-        passedFirstVec.at(x).addWine(passedWine);
+        passedFirstVec.at(x).addWine(passedTempWine);
+    }
+}
+//---------------------------------------------------------------
+//parameters are the mainVector,
+//an int value (x) to represent which winery,
+//an int value (y) to represent which wine to change the price of,
+//and a double value (z) to represent the new price of chosen wine
+void UserClass::adminChangePrice(vector<WineryClass> &passedFirstVec, int x,
+                                 int y, double z)
+{
+    if (isAdmin)
+    {
+        passedFirstVec.at(x).setWineCost(y, z);
     }
 }

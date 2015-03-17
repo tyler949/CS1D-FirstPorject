@@ -7,11 +7,13 @@
 #include <vector>
 #include <iomanip>
 #include "WineryClass.h"
+#include "wineType.h"
 #include "UserClass.h"
 using namespace std;
 
 void PropagateVector(vector<WineryClass>& passedFirstVec);
 void shortestDistance(vector<WineryClass> winvec, int start, int num,
                       vector<WineryClass> &tripvec);
+void updateVector(vector<WineryClass> orginal, vector<WineryClass> &newVec);
 
 #endif

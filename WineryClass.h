@@ -51,6 +51,7 @@ public:
     void addDistance(double x);
     void addWine(wineType wine);
     void clear();
+    void distanceClear();
     void setMilesToVilla(double passedMiles);
     void setWinesOffered(int);
     //used for setting a specific wineType nodes data
