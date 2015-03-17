@@ -54,16 +54,6 @@ border-bottom: 1px solid #ccc;
    background: #999;
 } </string>
   </property>
-  <widget class="QLineEdit" name="NameTextBox">
-   <property name="geometry">
-    <rect>
-     <x>130</x>
-     <y>30</y>
-     <width>113</width>
-     <height>20</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QPushButton" name="AddWineryButton">
    <property name="geometry">
     <rect>
@@ -74,21 +64,30 @@ border-bottom: 1px solid #ccc;
     </rect>
    </property>
    <property name="text">
-    <string>Add Winery</string>
+    <string>Next</string>
    </property>
   </widget>
-  <widget class="QLabel" name="nameLabel">
+  <widget class="QWidget" name="">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>30</y>
-     <width>51</width>
-     <height>20</height>
+     <x>116</x>
+     <y>130</y>
+     <width>168</width>
+     <height>22</height>
     </rect>
    </property>
-   <property name="text">
-    <string>Name</string>
-   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QLabel" name="nameLabel">
+      <property name="text">
+       <string>Name of Winery</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="NameTextBox"/>
+    </item>
+   </layout>
   </widget>
  </widget>
  <resources/>

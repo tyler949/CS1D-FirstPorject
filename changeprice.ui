@@ -80,7 +80,7 @@ border-bottom: 1px solid #ccc;
    </property>
    <item>
     <property name="text">
-     <string>Propagate from Wine Vector</string>
+     <string>propagate</string>
     </property>
    </item>
   </widget>

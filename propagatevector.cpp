@@ -27,7 +27,7 @@ void PropagateVector(vector<WineryClass>& passedFirstVec)
     //**comment out the above open code**
 
     // for QT
-    inFile.open("C:/Users/gdfgdf/Documents/GitHub/CS1D-FirstPorject/winerytextfile.txt");
+    inFile.open("C:/Users/Bigman/Documents/GitHub/CS1D-FirstPorject/winerytextfile.txt");
 
     while (inFile)
     {

@@ -42,7 +42,7 @@ void admenu::on_ChangeWinePriceButton_clicked()
 
 void admenu::on_ReturnToMenuButton_clicked()
 {
-    MainWindow *main = new MainWindow();
+    MainWindow *main = new MainWindow(this, wineryList);
     this->reject();
     main->show();
 }

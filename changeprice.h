@@ -22,6 +22,14 @@ public:
 private slots:
     void on_ConfirmChangeButton_clicked();
 
+    void on_WineryComboBox_activated(const QString &arg1);
+
+    void on_TypeOfWineComboBox_currentIndexChanged(const QString &arg1);
+
+    void on_TypeOfWineComboBox_currentIndexChanged(int index);
+
+    void on_WineryComboBox_currentIndexChanged(const QString &arg1);
+
 private:
     Ui::changeprice *ui;
     vector<WineryClass> *wineryList;

@@ -180,3 +180,7 @@ vector<wineType>* WineryClass::getWines()
 {
     return &winesVec;
 }
+int WineryClass::getSizeOfDistanceVec()
+{
+    return ((int)(distanceVec.size()));
+}

@@ -6,6 +6,7 @@
 #include <QVector>
 #include <vector>
 #include "wineryclass.h"
+#include "winetype.h"
 
 namespace Ui {
 class newwinery;
@@ -21,11 +22,16 @@ public:
 
 private slots:
     void on_AddWineryButton_clicked();
+    void updateWindow();
 
 private:
     Ui::newwinery *ui;
     vector<WineryClass> *wineryList;
     QWidget *adminMenue;
+    WineryClass tempWinery;
+    wineType tempWine;
+    int count;
+
 
 };
 

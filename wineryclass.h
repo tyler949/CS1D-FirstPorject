@@ -34,6 +34,7 @@ class WineryClass
         bool getVisted();
         void vist();
         vector<wineType>* getWines();
+        int   getSizeOfDistanceVec();
 
         //used for getting a specific wineType nodes data
         string getWineName(int x);
