@@ -63,16 +63,14 @@ void changeprice::on_TypeOfWineComboBox_currentIndexChanged(int index)
 }
 void changeprice::on_WineryComboBox_currentIndexChanged(const QString &arg1)
 {
-
-
-
+//        for(int j = 0; j < wineryList->at(ui->TypeOfWineComboBox->currentIndex()).getWinesOffered(); j++)
+//        {
+//            ui->TypeOfWineComboBox->addItem(QString::fromStdString(wineryList->at(ui->WineryComboBox->currentIndex()).getWineName(j)));
+//        }
 }
 
 void changeprice::on_WineryComboBox_currentIndexChanged(int index)
 {
-    for(int j = 0; j < wineryList->at(ui->TypeOfWineComboBox->currentIndex()).getWinesOffered(); j++)
-    {
-        ui->TypeOfWineComboBox->addItem(QString::fromStdString(wineryList->at(ui->WineryComboBox->currentIndex()).getWineName(j)));
-    }
+
 
 }

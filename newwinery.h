@@ -8,6 +8,7 @@
 #include "wineryclass.h"
 #include "winetype.h"
 #include "QString"
+#include "user.h"
 
 namespace Ui {
 class newwinery;
@@ -32,6 +33,9 @@ private:
     WineryClass tempWinery;
     wineType tempWine;
     int count;
+    user adminuser;
+
+
 
 
 };

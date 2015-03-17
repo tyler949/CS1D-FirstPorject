@@ -22,13 +22,26 @@ newwinery::~newwinery()
 void newwinery::on_AddWineryButton_clicked()
 {
 
+    if(count== 0)
+    {
+        tempWinery.setWineryName(ui->NameTextBox->text().toStdString());
+    }
+    else if(count == 1)
+    {
+        tempWinery.setMilesToVilla(ui->doubleSpinBox->value());
+    }
+    else
+    {
+        tempWinery.addDistance(ui->doubleSpinBox->value());
+    }
 
-    tempWinery.setWineryName(ui->NameTextBox->text().toStdString());
 
     this->updateWindow();
 
-    if(count== wineryList->size())
+    if(count== wineryList->size()+ 1)
     {
+        tempWinery.addDistance(0.0);
+        adminuser.adminAddWinery(*wineryList, tempWinery);
         this->reject();
         adminMenue->show();
     }
@@ -42,7 +55,16 @@ void newwinery::updateWindow()
     // This class will be run whenever the winery has changed
 
     // Update Winery Title
-    ui->nameLabel->setText(QString("Distance to "+ QString::fromStdString(wineryList->at(count).getWineryName())));
+    if(count == 0)
+    {
+        ui->nameLabel->setText(QString("Distance to Villa"));
+
+    }
+    else
+    {
+        ui->nameLabel->setText(QString("Distance to "+ QString::fromStdString(wineryList->at(count-1).getWineryName())));
+    }
+
     count++;
 
     ui->NameTextBox->close();

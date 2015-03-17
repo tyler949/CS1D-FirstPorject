@@ -54,54 +54,21 @@ border-bottom: 1px solid #ccc;
    background: #999;
 } </string>
   </property>
-  <widget class="QComboBox" name="YearComboBox">
-   <property name="geometry">
-    <rect>
-     <x>161</x>
-     <y>142</y>
-     <width>171</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <item>
-    <property name="text">
-     <string>Propagate from Wine Vector</string>
-    </property>
-   </item>
-  </widget>
   <widget class="QComboBox" name="TypeOfWineComboBox">
    <property name="geometry">
     <rect>
      <x>161</x>
-     <y>92</y>
+     <y>120</y>
      <width>171</width>
      <height>22</height>
     </rect>
-   </property>
-   <item>
-    <property name="text">
-     <string>propagate</string>
-    </property>
-   </item>
-  </widget>
-  <widget class="QLineEdit" name="NewPriceTextBox">
-   <property name="geometry">
-    <rect>
-     <x>161</x>
-     <y>182</y>
-     <width>171</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
    </property>
   </widget>
   <widget class="QComboBox" name="WineryComboBox">
    <property name="geometry">
     <rect>
      <x>161</x>
-     <y>42</y>
+     <y>70</y>
      <width>171</width>
      <height>22</height>
     </rect>
@@ -111,7 +78,7 @@ border-bottom: 1px solid #ccc;
    <property name="geometry">
     <rect>
      <x>91</x>
-     <y>42</y>
+     <y>70</y>
      <width>46</width>
      <height>20</height>
     </rect>
@@ -127,7 +94,7 @@ border-bottom: 1px solid #ccc;
    <property name="geometry">
     <rect>
      <x>61</x>
-     <y>182</y>
+     <y>168</y>
      <width>91</width>
      <height>20</height>
     </rect>
@@ -156,7 +123,7 @@ border-bottom: 1px solid #ccc;
    <property name="geometry">
     <rect>
      <x>71</x>
-     <y>92</y>
+     <y>120</y>
      <width>71</width>
      <height>16</height>
     </rect>
@@ -168,20 +135,20 @@ border-bottom: 1px solid #ccc;
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QLabel" name="YearLabel">
+  <widget class="QDoubleSpinBox" name="doubleSpinBox">
    <property name="geometry">
     <rect>
-     <x>101</x>
-     <y>142</y>
-     <width>46</width>
-     <height>13</height>
+     <x>162</x>
+     <y>169</y>
+     <width>71</width>
+     <height>22</height>
     </rect>
    </property>
-   <property name="text">
-    <string>Year</string>
+   <property name="maximum">
+    <double>20000.990000000001601</double>
    </property>
-   <property name="alignment">
-    <set>Qt::AlignCenter</set>
+   <property name="singleStep">
+    <double>0.010000000000000</double>
    </property>
   </widget>
  </widget>
