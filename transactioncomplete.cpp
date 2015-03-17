@@ -16,6 +16,7 @@ transactionComplete::~transactionComplete()
 
 void transactionComplete::on_pushButton_clicked()
 {
+    // back to main menu
     MainWindow *main = new MainWindow();
     this->reject();
     main->show();

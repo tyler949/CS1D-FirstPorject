@@ -7,7 +7,9 @@ paymentinfo::paymentinfo(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    // Input mask gives the type of input allowed
     ui->cardNum->setInputMask("0000000000000000");
+    // Max length of the input
     ui->cardNum->setMaxLength(9999999999999999);
 }
 
@@ -19,7 +21,7 @@ paymentinfo::~paymentinfo()
 void paymentinfo::on_pushButton_clicked()
 {
 
-    // Clear errors
+    // Clear label errors
     ui->errorCardNum->setText("");
     ui->errorCardNum->setStyleSheet("");
     ui->errorFirstName->setText("");
@@ -27,8 +29,11 @@ void paymentinfo::on_pushButton_clicked()
     ui->errorLastName->setText("");
     ui->errorLastName->setStyleSheet("");
 
+    // Error check if firstname, lastname or cardnumber is empty
     if (ui->firstName->text() == "" || ui->lastName->text() == "" || ui->cardNum->text() == "")
     {
+        // Then go through each error and output the label error if there is an error
+
         if (ui->firstName->text() == "")
         {
             ui->errorFirstName->setText("First name is required");
@@ -47,6 +52,7 @@ void paymentinfo::on_pushButton_clicked()
     }
     else
     {
+        // If all successful, thenit will process the card and direct to transaction complete page
         transactionComplete *trans = new transactionComplete;
         this->reject();
         trans->show();

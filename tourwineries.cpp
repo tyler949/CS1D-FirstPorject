@@ -13,7 +13,6 @@ tourWineries::tourWineries(QWidget *parent,vector<WineryClass> *originalList,int
 
     if (initialWinePurchase == 0)
     {
-        qDebug() << "Okay so I'm on 0 ";
         winePurchases = new vector<winePurchase>;
     }
     else
@@ -53,17 +52,29 @@ void tourWineries::on_pushButton_clicked()
 }
 void tourWineries::on_visitNextWinery_clicked()
 {
-    if (currentWinery < wineryList->size()-1)
+    // On clicking "next winery".. it will keep going or show total
+    // purchases if you are done with the list
+
+    // Fix the vector list bug
+    int subtractBy = 1;
+    if (originalWineryList->size() == wineryList->size())
     {
+        subtractBy = 2;
+    }
+    if (currentWinery < wineryList->size()- subtractBy)
+    {
+        // Go to next winery if there is more
         currentWinery++;
     }
     else
     {
+       // Show total order
        totalWineOrder *totalWine = new totalWineOrder(this,originalWineryList,wineryList,winePurchases);
        this->reject();
        totalWine->show();
-        currentWinery = 0;
+       currentWinery = 0;
     }
+    // Update winery
     this->updateWinery();
 }
 

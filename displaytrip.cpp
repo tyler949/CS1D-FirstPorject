@@ -48,15 +48,16 @@ DisplayTrip::DisplayTrip(QWidget *parent,
         for(vector<WineryClass>::iterator it = newWineryList.begin(); it< newWineryList.end(); it++)
         {
 
-                qDebug() << "First distance to " << prevWinery << " "<< newWineryList.at(count).getDistance(prevWinery);
-                miles += newWineryList.at(count).getDistance(prevWinery);
+            qDebug() << "First distance to " << prevWinery << " "<< newWineryList.at(count).getDistance(prevWinery);
+
+            miles += newWineryList.at(count).getDistance(prevWinery);
 
             QListWidgetItem *Item;
             Item = new QListWidgetItem();
             Item->setText(QString::fromStdString(newWineryList.at(count).getWineryName()));
             ui->listWidget->addItem(Item);
-            count++;
             prevWinery = count;
+            count++;
         }
         // Set total miles
         ui->label->setStyleSheet("padding: 5px;");

@@ -15,7 +15,9 @@ planShortestTrip::planShortestTrip(QWidget *parent,vector<WineryClass> *firstVec
     ui->setupUi(this);
     mainMenu = parent;
 
+    // Winery list assign
     wineryList = firstVec;
+    // Show each winery with a checkbox next to it
     for(int i=0;i< wineryList->size()-1;i++)
     {
         ui->comboBox->addItem(QString::fromStdString(wineryList->at(i).getWineryName()));
@@ -26,12 +28,15 @@ planShortestTrip::~planShortestTrip()
 {
     delete ui;
 }
-
+// This is the shortest distance formula. You pass in the original winery list, the start
+// number (winery number) and the number of wines and you provide an empty winery class vector
+// that you it can propogate into
 void shortestDistance(vector<WineryClass> winvec, int start, int num, vector<WineryClass> &tripvec)
 {
-
+    // Set smallest to 9999
     double smallest = 9999;
     int smallestPntr;
+    // Start at the winery chosen
     int k = start;
     tripvec.push_back(winvec.at(start));
     winvec.at(start).vist();
@@ -39,16 +44,20 @@ void shortestDistance(vector<WineryClass> winvec, int start, int num, vector<Win
     for(int i = 0; i < num; i++)
     {
         WineryClass temp = winvec.at(k);
+        // Go through each and get distances and if they are closest then add to list
+        // and mark as visited
         for(int count = 0; count < winvec.size() - 1; count++)
         {
             if(smallest > temp.getDistance(count)  && !(winvec.at(count).getVisted()))
             {
+                // Get distance of current one
                 smallest = temp.getDistance(count);
                 smallestPntr = count;
             }
         }
-
+        // Add to winery list
         tripvec.push_back(winvec.at(smallestPntr));
+        // Mark as visited
         winvec.at(smallestPntr).vist();
         k = smallestPntr;
         smallest = 999999;
