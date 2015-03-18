@@ -62,7 +62,6 @@ void UserClass::adminAddWinery(vector<WineryClass> &passedFirstVec,
                                WineryClass passedTempWinery)
 {
     int sizeOfDistVec;
-    WineryClass tempWinery;
     
     //sizeOfDistanceVec should be == 10 on the first run
     sizeOfDistVec = passedFirstVec.at(0).getSizeOfDistanceVec();
@@ -71,10 +70,13 @@ void UserClass::adminAddWinery(vector<WineryClass> &passedFirstVec,
     {
         for (int i = 0; i < sizeOfDistVec; i++)
         {
+            passedFirstVec.at(i).setNumberOfWinerys(passedFirstVec.at(i).getNumberOfWinerys()+1);
             passedFirstVec.at(i).addDistance(passedTempWinery.getDistance(i));
         }
         
-        passedFirstVec.push_back(tempWinery);
+        passedTempWinery.setNumberOfWinerys(passedFirstVec.at(0).getNumberOfWinerys());
+        passedTempWinery.setWineryNumber(passedFirstVec.at(0).getNumberOfWinerys());
+        passedFirstVec.push_back(passedTempWinery);
     }
 }
 //---------------------------------------------------------------
