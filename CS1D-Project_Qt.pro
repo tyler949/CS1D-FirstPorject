@@ -76,7 +76,6 @@ FORMS    += mainwindow.ui \
     paymentinfo.ui \
     transactioncomplete.ui
 
-DISTFILES += \
-    winerytextfile.txt
+DISTFILES +=
 
 RESOURCES +=

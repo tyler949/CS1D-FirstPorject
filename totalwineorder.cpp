@@ -16,8 +16,8 @@ totalWineOrder::totalWineOrder(QWidget *parent,vector<WineryClass> *originalList
     vector<wineType> *wineTypes;
     int wineTypeIndex;
     int wineryIndex;
-    int totalPrice;
-    int totalAllCost = 0;
+    double totalPrice;
+    double totalAllCost = 0;
 
     ui->setupUi(this);
     ui->tableWidget->setColumnCount(6);

@@ -29,14 +29,16 @@ void WriteToFile(vector<WineryClass>& wineryVector)
 {
     // On exit, write to file
     ofstream outFile;
-    outFile.open("WineryTextFile.txt"); // need to put full extension for QT
+    outFile.open("C:/Users/gdfgdf/Documents/GitHub/CS1D-FirstPorject/winerytextfile.txt"); // need to put full extension for QT
     outFile << fixed << setprecision(1);
 
     // For each and every winery, get the winery name, number, and all the wines
     // And then set the distance of each winery to the other. Same format that is
     // on winerylist.txt
-    for (int i = 0; i < wineryVector.size() - 1; i++)
+    for (int i = 0; i < wineryVector.size(); i++)
     {
+        if (i > 0)
+            outFile<< endl;
         outFile << "name of winery: " << wineryVector[i].getWineryName() << endl;
         outFile << "winery number " << wineryVector[i].getWineryNumber() << endl;
         outFile << "distance to other wineries - " << wineryVector[i].getNumberOfWinerys() << endl;
@@ -47,17 +49,24 @@ void WriteToFile(vector<WineryClass>& wineryVector)
         outFile << fixed << setprecision(2);
         outFile << wineryVector[i].getMilesToVilla() << " miles to Canyon Villa\n";
         outFile << fixed << setprecision(0);
-        outFile << wineryVector[i].getWinesOffered() << " wines offered\n";
+        outFile << wineryVector[i].getWinesOffered() << " wines offered";
         // Get wines offered from the wines vector of the winery list vector
-        for (int j = 0; j < wineryVector[i].getWinesOffered(); j++)
+        if (wineryVector[i].getWinesOffered() > 0)
         {
-            outFile << wineryVector[i].getWineName(j) << endl;
-            outFile << wineryVector[i].getWineYear(j) << endl;
-            outFile << setprecision(2);
-            outFile << wineryVector[i].getWineCost(j) << endl;
+            outFile << endl;
+            for (int j = 0; j < wineryVector[i].getWinesOffered(); j++)
+            {
+                outFile << wineryVector[i].getWineName(j) << endl;
+                outFile << wineryVector[i].getWineYear(j) << endl;
+                outFile << setprecision(2);
+                outFile << wineryVector[i].getWineCost(j);
+                if ((i < wineryVector.size()-1) || (j!=wineryVector[i].getWinesOffered()-1))
+                    outFile << endl;
+            }
         }
-        outFile << endl;
+
     }
+
     // Done with file
     outFile.close();
 }

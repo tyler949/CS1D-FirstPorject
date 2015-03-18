@@ -24,6 +24,7 @@ DisplayTrip::DisplayTrip(QWidget *parent,
     double miles = 0;
     if (listOfWineries != 0)
     {
+        miles += wineryList->at(listOfWineries->at(0)).getMilesToVilla();
         // List each winery
         for(vector<int>::iterator it = listOfWineries->begin(); it< listOfWineries->end(); it++)
         {
@@ -45,10 +46,10 @@ DisplayTrip::DisplayTrip(QWidget *parent,
     {
         int count = 0;
         // List each winery
+        miles += newWineryList.at(0).getMilesToVilla();
+
         for(vector<WineryClass>::iterator it = newWineryList.begin(); it< newWineryList.end(); it++)
         {
-
-            qDebug() << "First distance to " << prevWinery << " "<< newWineryList.at(count).getDistance(prevWinery);
 
             miles += newWineryList.at(count).getDistance(prevWinery);
 
