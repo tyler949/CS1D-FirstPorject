@@ -1,6 +1,0 @@
-<RCC>
-    <qresource prefix="/Images"/>
-    <qresource prefix="/">
-        <file>../../Desktop/bgflames.jpg</file>
-    </qresource>
-</RCC>
