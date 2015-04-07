@@ -19,6 +19,13 @@ public:
     ~MainWindow();
 
 private slots:
+<<<<<<< HEAD
+=======
+    void on_pushButton_clicked();
+
+    void on_pushButton_2_clicked();
+
+>>>>>>> origin/aven
 private:
     Ui::MainWindow *ui;
 };

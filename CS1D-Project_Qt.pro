@@ -13,13 +13,32 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp \
+<<<<<<< HEAD
     mainwindow.cpp
 
 HEADERS  += mainwindow.h
 
 FORMS    += mainwindow.ui
 
+=======
+    mainwindow.cpp \
+    displaytrip.cpp \
+    majorleaguestadiums.cpp \
+    dreamvacation.cpp
 
-DISTFILES +=
+HEADERS  += mainwindow.h \
+    displaytrip.h \
+    majorleaguestadiums.h \
+    dreamvacation.h
+
+FORMS    += mainwindow.ui \
+    displaytrip.ui \
+    majorleaguestadiums.ui \
+    dreamvacation.ui
+>>>>>>> origin/aven
+
+
+DISTFILES += \
+    winerytextfile.txt
 
 RESOURCES +=
