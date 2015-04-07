@@ -2,40 +2,24 @@
 #define DISPLAYTRIP_H
 
 #include <QDialog>
-#include <vector>
-#include "wineryclass.h"
 
 namespace Ui {
-class DisplayTrip;
+class displaytrip;
 }
 
-class DisplayTrip : public QDialog
+class displaytrip : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit DisplayTrip(QWidget *parent = 0,
-                          vector<WineryClass> *firstVec = 0,
-                          int itemChosen = 0,
-                          int totalWineries = 0,
-                          vector<int> *listOfWineries = 0,
-                          vector<WineryClass> *theNewWineryList = 0);
-    ~DisplayTrip();
+    explicit displaytrip(QWidget *parent = 0);
+    ~displaytrip();
 
 private slots:
     void on_pushButton_clicked();
 
-    void on_shopForWine_clicked();
-
 private:
-    Ui::DisplayTrip *ui;
-    QWidget *mainMenu;
-    vector<WineryClass> *wineryList;
-    int itemIndex;
-    int totalToVisit;
-    int *totalMiles;
-    vector<int> *wineriesToVisit;
-    vector<WineryClass> newWineryList;
+    Ui::displaytrip *ui;
 };
 
 #endif // DISPLAYTRIP_H

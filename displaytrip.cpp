@@ -1,17 +1,15 @@
 #include "displaytrip.h"
 #include "ui_displaytrip.h"
-#include "tourwineries.h"
-#include <QDebug>
-DisplayTrip::DisplayTrip(QWidget *parent,
-                         vector<WineryClass> *firstVec,
-                         int itemChosen,
-                         int totalWineries,
-                         vector<int> *listOfWineries,
-                         vector<WineryClass> *theNewWineryList) :
+#include "mainwindow.h"
+
+displaytrip::displaytrip(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::DisplayTrip)
+    ui(new Ui::displaytrip)
 {
     ui->setupUi(this);
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
     mainMenu     = parent;
     wineryList   = firstVec;
     itemIndex    = itemChosen;
@@ -24,7 +22,6 @@ DisplayTrip::DisplayTrip(QWidget *parent,
     double miles = 0;
     if (listOfWineries != 0)
     {
-        miles += wineryList->at(listOfWineries->at(0)).getMilesToVilla();
         // List each winery
         for(vector<int>::iterator it = listOfWineries->begin(); it< listOfWineries->end(); it++)
         {
@@ -46,10 +43,10 @@ DisplayTrip::DisplayTrip(QWidget *parent,
     {
         int count = 0;
         // List each winery
-        miles += newWineryList.at(0).getMilesToVilla();
-
         for(vector<WineryClass>::iterator it = newWineryList.begin(); it< newWineryList.end(); it++)
         {
+
+            qDebug() << "First distance to " << prevWinery << " "<< newWineryList.at(count).getDistance(prevWinery);
 
             miles += newWineryList.at(count).getDistance(prevWinery);
 
@@ -64,24 +61,19 @@ DisplayTrip::DisplayTrip(QWidget *parent,
         ui->label->setStyleSheet("padding: 5px;");
         ui->label->setText(QString::number(miles)+QString(" miles"));
     }
+>>>>>>> parent of 9b69076... changes
+=======
+>>>>>>> e5ffc14d9e7476d7d5eb77b87218a479b9261d78
 }
 
-DisplayTrip::~DisplayTrip()
+displaytrip::~displaytrip()
 {
     delete ui;
 }
 
-void DisplayTrip::on_pushButton_clicked()
+void displaytrip::on_pushButton_clicked()
 {
+    MainWindow *main = new MainWindow;
     this->reject();
-    mainMenu->show();
-}
-
-void DisplayTrip::on_shopForWine_clicked()
-{
-    vector<winePurchase> *purchases;
-    tourWineries *tour =  new tourWineries(mainMenu,wineryList,0,&newWineryList); // fourth field will be default
-
-    this->reject();
-    tour->show();
+    main->show();
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Form</class>
- <widget class="QWidget" name="Form">
+ <class>majorleaguestadiums</class>
+ <widget class="QDialog" name="majorleaguestadiums">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -11,42 +11,42 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#label
+{
+  background:#fff;
+padding:5px; 
+}</string>
   </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>30</y>
-     <width>46</width>
-     <height>13</height>
+     <x>10</x>
+     <y>10</y>
+     <width>381</width>
+     <height>51</height>
     </rect>
    </property>
    <property name="text">
-    <string>Name</string>
+    <string>Visit Major League Stadiums</string>
+   </property>
+   <property name="margin">
+    <number>109</number>
    </property>
   </widget>
-  <widget class="QLineEdit" name="NameTextBox">
+  <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>120</x>
-     <y>30</y>
-     <width>113</width>
-     <height>20</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="AddWineryButton">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
+     <x>110</x>
      <y>250</y>
-     <width>201</width>
-     <height>23</height>
+     <width>181</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="text">
-    <string>Add Winery</string>
+    <string>Visit</string>
    </property>
   </widget>
  </widget>

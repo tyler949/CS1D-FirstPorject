@@ -18,7 +18,7 @@ planCustomTrip::planCustomTrip(QWidget *parent,vector<WineryClass> *firstVec) :
     wineryList = firstVec;
 
     // Go through each winery and put them in a list with a checkbox next to it
-    for(int i = 0; i<wineryList->size();i++)
+    for(int i = 0; i<wineryList->size()-1;i++)
     {
         // Get item from winery list vector
         QListWidgetItem* item = new QListWidgetItem(QString::fromStdString(wineryList->at(i).getWineryName()), ui->listWidget);
@@ -64,43 +64,43 @@ void updateVector(vector<WineryClass> orginal, vector<WineryClass> &newVec)
 void planCustomTrip::on_pushButton_clicked()
 {
     // Vector for list of wineries to visit
-       vector<WineryClass> wineriesToVisit;
-       vector<int> wineriesPass;
+    vector<WineryClass> wineriesToVisit;
+    vector<int> wineriesPass;
 
-       // Reset errors
-       ui->noWineriesSelected->setText("");
-       ui->noWineriesSelected->setStyleSheet("");
+    // Reset errors
+    ui->noWineriesSelected->setText("");
+    ui->noWineriesSelected->setStyleSheet("");
 
-       for(int row = 0; row < ui->listWidget->count(); row++)
-       {
-           // Check if item is checked. If so, add to vector
-           // of wineries to visit
-           if (ui->listWidget->item(row)->checkState() == Qt::Checked)
-           {
-               wineriesToVisit.push_back(wineryList->at(row));
-           }
+    for(int row = 0; row < ui->listWidget->count(); row++)
+    {
+        // Check if item is checked. If so, add to vector
+        // of wineries to visit
+        if (ui->listWidget->item(row)->checkState() == Qt::Checked)
+        {
+            wineriesToVisit.push_back(wineryList->at(row));
+        }
 
-       }
-       // Now we are error checking...
+    }
+    // Now we are error checking...
 
-       // If no winery to visit is checked, then it will not allow to proceed
-       if (wineriesToVisit.empty())
-       {
-           ui->noWineriesSelected->setText("Please select at least one winery to visit");
-           ui->noWineriesSelected->setStyleSheet("background:#ccc;color:#ff0000;padding:5px;");
-       }
-       else
-       {
-           // Update vector to get the new order
-           updateVector(*wineryList,wineriesToVisit);
+    // If no winery to visit is checked, then it will not allow to proceed
+    if (wineriesToVisit.empty())
+    {
+        ui->noWineriesSelected->setText("Please select at least one winery to visit");
+        ui->noWineriesSelected->setStyleSheet("background:#ccc;color:#ff0000;padding:5px;");
+    }
+    else
+    {
+        // Update vector to get the new order
+        updateVector(*wineryList,wineriesToVisit);
 
-           // Show display trip and close this dialog
-           tripDisplay = new DisplayTrip(mainMenu,wineryList,0,0,0,&wineriesToVisit);
-           this->reject();
-           tripDisplay->show();
+        // Show display trip and close this dialog
+        tripDisplay = new DisplayTrip(mainMenu,wineryList,0,0,0,&wineriesToVisit);
+        this->reject();
+        tripDisplay->show();
 
 
-       }
+    }
 }
 
 void planCustomTrip::on_back_clicked()

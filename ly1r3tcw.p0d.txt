@@ -1,0 +1,57 @@
+﻿Revert "changes"
+
+This reverts commit 9b69076b32289656d9065271f3c87490816ce63d.
+
+Conflicts:
+	CS1D-Project_Qt.pro.user
+	addwine.cpp
+	adlogin.cpp
+	adlogin.h
+	adlogin.ui
+	displaytrip.cpp
+	main.cpp
+	mainwindow.cpp
+	newwinery.cpp
+	plancustomtrip.cpp
+	plandaytrip.cpp
+	planshortesttrip.cpp
+	propagatevector.cpp
+	shopforwine.cpp
+	shopforwine.ui
+	totalwineorder.cpp
+	tourwineries.cpp
+	user.cpp
+	viewwinerieswindow.cpp
+	winerytextfile.txt
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch aven
+# Your branch is up-to-date with 'origin/aven'.
+#
+# You are currently reverting commit 9b69076.
+#
+# Changes to be committed:
+#	modified:   CS1D-Project_Qt.pro
+#	modified:   CS1D-Project_Qt.pro.user
+#	new file:   addwine.cpp
+#	new file:   adlogin.cpp
+#	new file:   adlogin.h
+#	new file:   adlogin.ui
+#	modified:   displaytrip.cpp
+#	modified:   main.cpp
+#	modified:   mainwindow.cpp
+#	new file:   newwinery.cpp
+#	new file:   plancustomtrip.cpp
+#	new file:   plandaytrip.cpp
+#	new file:   planshortesttrip.cpp
+#	new file:   propagatevector.cpp
+#	new file:   shopforwine.cpp
+#	new file:   shopforwine.ui
+#	new file:   totalwineorder.cpp
+#	new file:   tourwineries.cpp
+#	new file:   user.cpp
+#	new file:   viewwinerieswindow.cpp
+#	new file:   winerytextfile.txt
+#
+

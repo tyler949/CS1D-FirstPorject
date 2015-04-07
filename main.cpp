@@ -1,8 +1,5 @@
 #include "mainwindow.h"
 #include <QApplication>
-#include "wineryclass.h"
-#include "propagatevector.cpp"
-#include "winetype.h"
 #include <iostream>
 #include <QTextStream>
 #include <vector>
@@ -13,16 +10,15 @@ int main(int argc, char *argv[])
     // Start application
     QApplication a(argc, argv);
 
+<<<<<<< HEAD
+=======
     // Initialize & Propogate the vector
     vector<WineryClass> firstVec;
     PropagateVector(firstVec);
 
-    for(int i = 0; i < firstVec.size(); i++)
-    {
-        qDebug() << QString::fromStdString(firstVec.at(i).getWineryName());
-    }
+>>>>>>> parent of 9b69076... changes
     // Open the main window and let's get started
-    MainWindow w(0,&firstVec);
+    MainWindow w;
     w.show();
 
 

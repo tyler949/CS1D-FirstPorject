@@ -38,7 +38,6 @@ private:
     user admin;
     string username;
     string password;
-    int attempts;
 
 
 

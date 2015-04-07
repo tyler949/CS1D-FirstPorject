@@ -1,9 +1,5 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "viewwinerieswindow.h"
-#include "plandaytrip.h"
-#include "tourwineries.h"
-#include "wineryclass.h"
 #include <QMessageBox>
 #include <QString>
 #include <iostream>
@@ -11,34 +7,36 @@
 #include <QTextStream>
 #include <fstream>
 #include <iomanip>
-
-MainWindow::MainWindow(QWidget *parent,vector<WineryClass> *firstVec) :
+#include "majorleaguestadiums.h"
+#include "dreamvacation.h"
+MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    // Get winery list from main window
-    wineryList = firstVec;
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
 }
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
 void WriteToFile(vector<WineryClass>& wineryVector)
 {
     // On exit, write to file
     ofstream outFile;
-    outFile.open("C:/Users/gdfgdf/Documents/GitHub/CS1D-FirstPorject/winerytextfile.txt"); // need to put full extension for QT
+    outFile.open("WineryTextFile.txt"); // need to put full extension for QT
     outFile << fixed << setprecision(1);
 
     // For each and every winery, get the winery name, number, and all the wines
     // And then set the distance of each winery to the other. Same format that is
     // on winerylist.txt
-    for (int i = 0; i < wineryVector.size(); i++)
+    for (int i = 0; i < wineryVector.size() - 1; i++)
     {
-        if (i > 0)
-            outFile<< endl;
         outFile << "name of winery: " << wineryVector[i].getWineryName() << endl;
         outFile << "winery number " << wineryVector[i].getWineryNumber() << endl;
         outFile << "distance to other wineries - " << wineryVector[i].getNumberOfWinerys() << endl;
@@ -49,24 +47,17 @@ void WriteToFile(vector<WineryClass>& wineryVector)
         outFile << fixed << setprecision(2);
         outFile << wineryVector[i].getMilesToVilla() << " miles to Canyon Villa\n";
         outFile << fixed << setprecision(0);
-        outFile << wineryVector[i].getWinesOffered() << " wines offered";
+        outFile << wineryVector[i].getWinesOffered() << " wines offered\n";
         // Get wines offered from the wines vector of the winery list vector
-        if (wineryVector[i].getWinesOffered() > 0)
+        for (int j = 0; j < wineryVector[i].getWinesOffered(); j++)
         {
-            outFile << endl;
-            for (int j = 0; j < wineryVector[i].getWinesOffered(); j++)
-            {
-                outFile << wineryVector[i].getWineName(j) << endl;
-                outFile << wineryVector[i].getWineYear(j) << endl;
-                outFile << setprecision(2);
-                outFile << wineryVector[i].getWineCost(j);
-                if ((i < wineryVector.size()-1) || (j!=wineryVector[i].getWinesOffered()-1))
-                    outFile << endl;
-            }
+            outFile << wineryVector[i].getWineName(j) << endl;
+            outFile << wineryVector[i].getWineYear(j) << endl;
+            outFile << setprecision(2);
+            outFile << wineryVector[i].getWineCost(j) << endl;
         }
-
+        outFile << endl;
     }
-
     // Done with file
     outFile.close();
 }
@@ -97,30 +88,24 @@ void MainWindow::on_viewWineries_clicked()
     this->close();
     viewWineries->exec();
 }
+>>>>>>> parent of 9b69076... changes
+=======
+>>>>>>> e5ffc14d9e7476d7d5eb77b87218a479b9261d78
 
-void MainWindow::on_planADayTrip_clicked()
+void MainWindow::on_pushButton_clicked()
 {
-    // View plan day trip screen once clicked and close this screen
-    dayTrip = new planDayTrip(this,wineryList);
+    majorleaguestadiums *stadiums = new majorleaguestadiums;
     this->close();
-    dayTrip->exec();
+    stadiums->show();
 }
 
-void MainWindow::on_tourAndPurchaseWines_clicked()
+void MainWindow::on_pushButton_2_clicked()
 {
-    // Create instant of winery purchases
-    winePurchases = new vector<winePurchase>;
-    // Touring wineries will go through each winery so we will be with 0
-    int currentWinery = 0;
-    tourWines = new tourWineries(this,wineryList,currentWinery,wineryList,winePurchases);
-    this->hide();
-    tourWines->show();
-}
-
-void MainWindow::on_AdminLogin_clicked()
-{
-    // View  login once clicked and close this screen
-    login = new adlogin(this, wineryList);
+    dreamvacation *dream = new dreamvacation;
     this->close();
-    login->show();
+    dream->show();
 }
+<<<<<<< HEAD
+>>>>>>> 50e0b4f... Revert "changes"
+=======
+>>>>>>> e5ffc14d9e7476d7d5eb77b87218a479b9261d78

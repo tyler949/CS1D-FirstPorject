@@ -59,7 +59,13 @@ void tourWineries::on_visitNextWinery_clicked()
     // purchases if you are done with the list
 
     // Fix the vector list bug
-    if (currentWinery < wineryList->size()-1)
+    qDebug() << wineryList->size();
+    int subtractBy = 1;
+    if (originalWineryList->size() == wineryList->size())
+    {
+        subtractBy = 2;
+    }
+    if (currentWinery < wineryList->size()- subtractBy)
     {
         // Go to next winery if there is more
         currentWinery++;

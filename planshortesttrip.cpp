@@ -18,7 +18,7 @@ planShortestTrip::planShortestTrip(QWidget *parent,vector<WineryClass> *firstVec
     // Winery list assign
     wineryList = firstVec;
     // Show each winery with a checkbox next to it
-    for(int i=0;i< wineryList->size();i++)
+    for(int i=0;i< wineryList->size()-1;i++)
     {
         ui->comboBox->addItem(QString::fromStdString(wineryList->at(i).getWineryName()));
     }
@@ -33,8 +33,10 @@ planShortestTrip::~planShortestTrip()
 // that you it can propogate into
 void shortestDistance(vector<WineryClass> winvec, int start, int num, vector<WineryClass> &tripvec)
 {
+    // Set smallest to 9999
     double smallest = 9999;
     int smallestPntr;
+    // Start at the winery chosen
     int k = start;
     tripvec.push_back(winvec.at(start));
     winvec.at(start).vist();
@@ -42,23 +44,26 @@ void shortestDistance(vector<WineryClass> winvec, int start, int num, vector<Win
     for(int i = 0; i < num; i++)
     {
         WineryClass temp = winvec.at(k);
-        for(int count = 0; count < winvec.size(); count++)
+        // Go through each and get distances and if they are closest then add to list
+        // and mark as visited
+        for(int count = 0; count < winvec.size() - 1; count++)
         {
             if(smallest > temp.getDistance(count)  && !(winvec.at(count).getVisted()))
             {
+                // Get distance of current one
                 smallest = temp.getDistance(count);
                 smallestPntr = count;
             }
         }
-
+        // Add to winery list
         tripvec.push_back(winvec.at(smallestPntr));
+        // Mark as visited
         winvec.at(smallestPntr).vist();
         k = smallestPntr;
         smallest = 999999;
     }
 
 }
-
 void planShortestTrip::on_pushButton_clicked()
 {
     // Wineries to visit
@@ -75,9 +80,9 @@ void planShortestTrip::on_pushButton_clicked()
     int totalWineries = ui->spinBox->value();
 
     // Error check if there were no items chosen or no amount of wines selected
-    if (itemChosen == -2 || totalWineries == 0)
+    if (itemChosen == -1 || totalWineries == 0)
     {
-        if (itemChosen == -2)
+        if (itemChosen == -1)
         {
             ui->missingStartWinery->setText("Must select winery to continue");
             ui->missingStartWinery->setStyleSheet("background:#ccc;color:#ff0000;padding:5px;");
@@ -91,9 +96,9 @@ void planShortestTrip::on_pushButton_clicked()
     else
     {
         vector<WineryClass> newWineryVec;
-        shortestDistance(*wineryList,itemChosen+1, totalWineries-1, newWineryVec);
+        shortestDistance(*wineryList,itemChosen+1, totalWineries, newWineryVec);
 
-        for(int i = 0; i < newWineryVec.size(); i++)
+        for(int i = 0; i < newWineryVec.size()-1; i++)
         {
             wineriesToVisit.push_back(newWineryVec.at(i).getWineryNumber()-1);
         }

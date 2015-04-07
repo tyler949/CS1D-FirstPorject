@@ -22,10 +22,9 @@ shopForWine::shopForWine(QWidget *parent,vector<WineryClass> *originalList,int c
     originalWineryList = originalList;
 
     // Set table columns, header, and remove vertical header
-    ui->tableWidget->setColumnCount(3);
+    ui->tableWidget->setColumnCount(2);
     ui->tableWidget->setHorizontalHeaderItem(0,new QTableWidgetItem("Quantity"));
     ui->tableWidget->setHorizontalHeaderItem(1,new QTableWidgetItem("Wine Name"));
-    ui->tableWidget->setHorizontalHeaderItem(2,new QTableWidgetItem("Price"));
     ui->tableWidget->verticalHeader()->setVisible(false);
 
     // Get wines from current winery
@@ -39,7 +38,6 @@ shopForWine::shopForWine(QWidget *parent,vector<WineryClass> *originalList,int c
         QSpinBox *spinBox = new QSpinBox(ui->tableWidget);
         ui->tableWidget->setCellWidget(i,0,spinBox);
         ui->tableWidget->setItem(i,1,new QTableWidgetItem(QString::fromStdString(wineTypes->at(i).getName())));
-        ui->tableWidget->setItem(i,2,new QTableWidgetItem(QString("$")+QString::number(wineTypes->at(i).getCost())));
     }
 }
 shopForWine::~shopForWine()

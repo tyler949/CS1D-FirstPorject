@@ -20,7 +20,7 @@ newwinery::newwinery(QWidget *parent, vector<WineryClass> *firstVec) :
     ui->tableWidget->verticalHeader()->setVisible(false);
 
     // Each each winery to the table
-    for(int i=0; i < wineryList->size(); i++)
+    for(int i=0; i < wineryList->size()-1; i++)
     {
         ui->tableWidget->insertRow(i);
         QDoubleSpinBox *spinBox = new QDoubleSpinBox(ui->tableWidget);
@@ -62,7 +62,7 @@ void newwinery::on_AddWineryButton_clicked()
     {
         tempWinery.setWineryName(ui->NameTextBox->text().toStdString());
         tempWinery.setMilesToVilla(ui->doubleSpinBox->value());
-        for(int i = 0; i < wineryList->size()/*-1*/; i++)
+        for(int i = 0; i < wineryList->size()-1; i++)
         {
             sp = (QDoubleSpinBox*)ui->tableWidget->cellWidget(i,0);
             distance = sp->value();

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>displaytrip</class>
- <widget class="QDialog" name="displaytrip">
+ <class>dreamvacation</class>
+ <widget class="QDialog" name="dreamvacation">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -16,8 +16,8 @@
   <property name="styleSheet">
    <string notr="true">#label
 {
-	background:#fff;
-padding:10px;
+  background:#fff;
+padding:5px; 
 }</string>
   </property>
   <widget class="QLabel" name="label">
@@ -26,40 +26,30 @@ padding:10px;
      <x>10</x>
      <y>10</y>
      <width>381</width>
-     <height>41</height>
+     <height>51</height>
     </rect>
    </property>
+   <property name="toolTipDuration">
+    <number>0</number>
+   </property>
    <property name="text">
-    <string> Trip Summary </string>
+    <string>Your Dream Vacation</string>
    </property>
    <property name="margin">
-    <number>145</number>
+    <number>135</number>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>100</x>
+     <x>120</x>
      <y>250</y>
-     <width>191</width>
+     <width>181</width>
      <height>41</height>
     </rect>
    </property>
    <property name="text">
-    <string>main menu</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_2">
-   <property name="geometry">
-    <rect>
-     <x>100</x>
-     <y>200</y>
-     <width>191</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Purchase Souvenirs</string>
+    <string>Visit</string>
    </property>
   </widget>
  </widget>

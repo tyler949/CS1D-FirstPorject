@@ -112,7 +112,7 @@ background: #ccc;
     <bool>true</bool>
    </attribute>
    <attribute name="horizontalHeaderDefaultSectionSize">
-    <number>106</number>
+    <number>150</number>
    </attribute>
   </widget>
  </widget>
