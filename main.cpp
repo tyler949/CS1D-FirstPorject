@@ -10,6 +10,13 @@ int main(int argc, char *argv[])
     // Start application
     QApplication a(argc, argv);
 
+<<<<<<< HEAD
+=======
+    // Initialize & Propogate the vector
+    vector<WineryClass> firstVec;
+    PropagateVector(firstVec);
+
+>>>>>>> parent of 9b69076... changes
     // Open the main window and let's get started
     MainWindow w;
     w.show();

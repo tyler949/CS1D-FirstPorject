@@ -20,6 +20,7 @@ HEADERS  += mainwindow.h
 FORMS    += mainwindow.ui
 
 
-DISTFILES +=
+DISTFILES += \
+    winerytextfile.txt
 
 RESOURCES +=
