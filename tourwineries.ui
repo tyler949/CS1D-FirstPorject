@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>tourWineries</class>
+ <widget class="QDialog" name="tourWineries">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Tour Wineries</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QPushButton{background-color: #ccc;}
+
+QMainWindow QPushButton:hover
+{
+background: #eee;
+cursor: pointer;
+  
+}
+QDialog
+{
+background: #333;
+}
+QDialog QPushButton {  border: 2px solid #666;border-radius: 5px;z-index:1000;}
+
+MainWindow  QPushButton#viewWineries
+{ 
+height:100px;
+}
+          
+QMainWindow #label
+{
+  font-family:verdana;
+   color:#fff; 
+  padding:10px;
+display: block; 
+  border: 2px solid #666;border-radius: 5px;}
+
+
+QMainWindow #label_2
+{
+background:#000;
+padding:10px;
+}
+#columnView
+{z-index: 0; 
+background:#666;
+}  </string>
+  </property>
+  <widget class="QColumnView" name="columnView">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>60</y>
+     <width>231</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="shopForWine">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>70</y>
+     <width>211</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Shop for Wine</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="visitNextWinery">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>110</y>
+     <width>211</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Visit Next Winery</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>160</y>
+     <width>151</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Back To Menu</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>10</y>
+     <width>341</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
