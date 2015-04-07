@@ -13,11 +13,20 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    displaytrip.cpp \
+    majorleaguestadiums.cpp \
+    dreamvacation.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    displaytrip.h \
+    majorleaguestadiums.h \
+    dreamvacation.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    displaytrip.ui \
+    majorleaguestadiums.ui \
+    dreamvacation.ui
 
 
 DISTFILES += \

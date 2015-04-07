@@ -7,7 +7,8 @@
 #include <QTextStream>
 #include <fstream>
 #include <iomanip>
-
+#include "majorleaguestadiums.h"
+#include "dreamvacation.h"
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -19,6 +20,7 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -87,6 +89,8 @@ void MainWindow::on_viewWineries_clicked()
     viewWineries->exec();
 }
 >>>>>>> parent of 9b69076... changes
+=======
+>>>>>>> e5ffc14d9e7476d7d5eb77b87218a479b9261d78
 
 void MainWindow::on_pushButton_clicked()
 {
@@ -101,4 +105,7 @@ void MainWindow::on_pushButton_2_clicked()
     this->close();
     dream->show();
 }
+<<<<<<< HEAD
 >>>>>>> 50e0b4f... Revert "changes"
+=======
+>>>>>>> e5ffc14d9e7476d7d5eb77b87218a479b9261d78

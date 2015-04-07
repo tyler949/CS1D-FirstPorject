@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
 <<<<<<< HEAD
+<<<<<<< HEAD
 <!-- Written by QtCreator 3.3.0, 2015-03-17T20:52:36. -->
 =======
 <<<<<<< HEAD
@@ -9,6 +10,9 @@
 <!-- Written by QtCreator 3.2.2, 2015-03-17T14:30:39. -->
 >>>>>>> parent of 9b69076... changes
 >>>>>>> 50e0b4f... Revert "changes"
+=======
+<!-- Written by QtCreator 3.3.0, 2015-04-06T19:07:50. -->
+>>>>>>> e5ffc14d9e7476d7d5eb77b87218a479b9261d78
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>

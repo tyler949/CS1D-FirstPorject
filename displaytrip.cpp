@@ -8,6 +8,7 @@ displaytrip::displaytrip(QWidget *parent) :
 {
     ui->setupUi(this);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     mainMenu     = parent;
     wineryList   = firstVec;
@@ -61,6 +62,8 @@ displaytrip::displaytrip(QWidget *parent) :
         ui->label->setText(QString::number(miles)+QString(" miles"));
     }
 >>>>>>> parent of 9b69076... changes
+=======
+>>>>>>> e5ffc14d9e7476d7d5eb77b87218a479b9261d78
 }
 
 displaytrip::~displaytrip()
